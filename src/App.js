@@ -6,6 +6,7 @@ import SignUpAl from './pages/signupAl';
 import SignUpPr from './pages/signupPR';
 import NotFound from './components/NotFound';
 import './App.css';
+import EvaProfe from './pages/evaProfe';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/login' element= {<LogIn/>}/>
           <Route path='/signupA' element={<SignUpAl/>}/>
           <Route path='/signUpP' element={<SignUpPr/>}/>
+          <Route path='/evaProfe' element={<EvaProfe/>}/>
       </Routes>
     </BrowserRouter>
     {/*<UserConfigModal/>*/}
