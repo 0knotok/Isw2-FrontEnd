@@ -18,7 +18,9 @@ const Navbar = () => {
                                 <a class="nav-link" href="#">Módulos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Foro</a>
+                                <Link to='/foro'>
+                                    <a class="nav-link" href="#">Foro</a>
+                                </Link>
                             </li>
                         </ul>
                     </div>

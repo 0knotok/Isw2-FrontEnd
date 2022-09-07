@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Navbar from '../components/Navbar';
 
 function Foro1(){
 
@@ -149,40 +150,41 @@ function Foro1(){
   
   }
 
-  return <div>
-    
+  return (
+  <div className="container">
     <body>
-      <div class="row bg-light">
-        <nav className="navbar mt-2">
-          <h3>E-Learn</h3>
-        </nav>
-      </div>
-
+      <Navbar/>
       <div className="card mt-4" id="foro">
         <div className="card-body">
           <h3>Foro 1: Gramática</h3><br></br>
           <h6>Selecciona un Slot vacío para realizar una Pregunta | Selecciona un Slot con una pregunta para subir una Respuesta</h6><br></br>
-          <p>Pregunta 1: {pregunta1}</p>
-          <p>Respuesta: {respuesta1}</p><br></br>
+          <div class="container border mt-3">
+            <p>Pregunta 1: {pregunta1}</p>
+            <p>Respuesta: {respuesta1}</p><br></br>
+          </div>
+          <div class="container border">
           <p>Pregunta 2: {pregunta2}</p>
           <p>Respuesta: {respuesta2}</p><br></br>
+          </div>
+          <div class="container border">
           <p>Pregunta 3: {pregunta3}</p>
           <p>Respuesta: {respuesta3}</p><br></br>
+          </div>
         </div>
       </div>
 
       <div>
-        <button className="mt-4 btn-primary" onClick={handleClick1}>Slot 1</button>
+        <button className="mt-4  btn btn-primary" onClick={handleClick1}>Slot 1</button>
         {isShown1 && <Preguntar1 />}
       </div>
 
       <div>
-        <button className="mt-4 btn-primary" onClick={handleClick2}>Slot 2</button>
+        <button className="mt-4 btn btn-primary" onClick={handleClick2}>Slot 2</button>
         {isShown2 && <Preguntar2 />}
       </div>
 
       <div>
-        <button className="mt-4 btn-primary" onClick={handleClick3}>Slot 3</button>
+        <button className="mt-4 btn btn-primary" onClick={handleClick3}>Slot 3</button>
         {isShown3 && <Preguntar3 />}
       </div>
 
@@ -190,7 +192,7 @@ function Foro1(){
     </body>
     
   </div>
-
+  )
 }
 
 export default Foro1;
