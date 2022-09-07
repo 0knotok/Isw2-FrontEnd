@@ -181,14 +181,6 @@ function Foro1(){
 
 
 
-      <div>
-
-      </div>
-
-      <div>
-
-      </div>
-
       <br></br><br></br>
     </body>
     
