@@ -14,6 +14,9 @@ const Navbar = () => {
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class= "nav-item">
+                                <Link className='nav-link' to='/perfil'>Perfil</Link>
+                            </li>
                             <li class="nav-item">
                                 <Link className="nav-link" to="/foro">Foro</Link>
                             </li>
