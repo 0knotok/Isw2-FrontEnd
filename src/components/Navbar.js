@@ -15,16 +15,7 @@ const Navbar = () => {
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-<<<<<<< HEAD
-                                <a class="nav-link" href="#">Módulos</a>
-                            </li>
-                            <li class="nav-item">
-                                <Link to='/foro'>
-                                    <a class="nav-link" href="#">Foro</a>
-                                </Link>
-=======
                                 <Link className="nav-link" to="/foro">Foro</Link>
->>>>>>> 401cecd963765652c68f7f77bce2dbf1c01ea255
                             </li>
                         </ul>
                     </div>
