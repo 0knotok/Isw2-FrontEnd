@@ -6,6 +6,7 @@ import SignUpAl from './pages/signupAl';
 import SignUpPr from './pages/signupPR';
 import NotFound from './components/NotFound';
 import Perfil from './pages/Perfil';
+import Curso from './pages/ModuloCurso'
 import Disponibilidad from './pages/disponiblidad';
 import './App.css';
 import EvaProfe from './pages/evaProfe';
@@ -16,6 +17,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/portal' element={<Portal/>}/>
+          <Route path='/curso' element={<Curso/>}/>
           <Route path='*' element={<NotFound/>}/>
           <Route path='/' element= {<LogIn/>}/>
           <Route path='/signUpA' element={<SignUpAl/>}/>
