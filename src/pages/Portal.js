@@ -2,17 +2,26 @@ import React from 'react'
 import Curso from "../components/Curso";
 import Foro from "../components/Foro";
 import Zoom from "../components/Zoom";
+import Navbar from '../components/Navbar';
+import { Link } from 'react-router-dom';  
 import {FiSearch} from 'react-icons/fi'
 
 export default function Portal() {
   return (
     <div class="d-flex justify-content-center">
+      
 <section className="w-75 p-3 ">
+<Navbar/>
+  <div className="mb-7">
+
+  </div>
   <div className="mb-6">
     <h2 className="text-center">
-      <small className="text-muted">Your student portal, NOMBRE</small>
+      <small className="text-muted">Your student portal, NOMBRE</small>    
     </h2>
   </div>
+  
+  
   <div className="d-flex mt-6 justify-content-between">
     <div>
       <h1 className="font-weight-normal">My courses</h1>

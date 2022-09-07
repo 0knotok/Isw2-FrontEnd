@@ -1,9 +1,12 @@
+import { Link } from 'react-router-dom';  
 const Navbar = () => {
     return (
         <div className="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">E-Learn</a>
+                    <Link to='/portal'>
+                        <a class="navbar-brand" href="#">E-Learn</a>
+                    </Link>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -22,6 +25,9 @@ const Navbar = () => {
                             </li>
                         </ul>
                     </div>
+                        <Link to='/'>
+                            <button className='btn btn-danger'>Sign Out</button>
+                        </Link>
                 </div>
             </nav>
         </div>

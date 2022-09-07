@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom';  
 
 export default function SignUpAl(){
     return(
@@ -38,7 +38,9 @@ export default function SignUpAl(){
                     <div class="row">
                         <div class="col-4 mx-2"></div>
                         <div class="col-2 mx-4">
-                            <button class="btn btn-primary">Registrese</button>
+                            <Link to='/portal'>
+                                <button class="btn btn-primary">Registrese</button>
+                            </Link>
                         </div>
                         <div class="col-5"></div>
                     </div>

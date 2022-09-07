@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';  
 import {useState} from "react"
 
 export default function SignUpPr(){
@@ -73,7 +74,9 @@ export default function SignUpPr(){
                     <div class="row">
                         <div class="col-4 mx-2"></div>
                         <div class="col-2 mx-4">
-                            <button class="btn btn-primary">Registrese</button>
+                            <Link to ='/portal'>
+                                <button class="btn btn-primary">Registrese</button>
+                            </Link>
                         </div>
                         <div class="col-5"></div>
                     </div>
