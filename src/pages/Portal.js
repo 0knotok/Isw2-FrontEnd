@@ -3,6 +3,7 @@ import Curso from "../components/Curso";
 import Foro from "../components/Foro";
 import Zoom from "../components/Zoom";
 import {FiSearch} from 'react-icons/fi'
+import { NavLink } from 'react-router-dom';
 
 export default function Portal() {
   return (
