@@ -6,6 +6,7 @@ import SignUpAl from './pages/signupAl';
 import SignUpPr from './pages/signupPR';
 import NotFound from './components/NotFound';
 import Perfil from './pages/Perfil';
+import Disponibilidad from './pages/disponiblidad';
 import './App.css';
 import EvaProfe from './pages/evaProfe';
 
@@ -14,13 +15,14 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Portal/>}/>
+          <Route path='/portal' element={<Portal/>}/>
           <Route path='*' element={<NotFound/>}/>
-          <Route path='/login' element= {<LogIn/>}/>
+          <Route path='/' element= {<LogIn/>}/>
           <Route path='/signupA' element={<SignUpAl/>}/>
           <Route path='/signUpP' element={<SignUpPr/>}/>
           <Route path='/evaProfe' element={<EvaProfe/>}/>
           <Route path='/perfil' element={<Perfil/>}/>
+          <Route path='/disponibilidad' element={<Disponibilidad/>}/>
       </Routes>
     </BrowserRouter>
     {/*<UserConfigModal/>*/}
