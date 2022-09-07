@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 export default function Curso() {
   return (
     <div className="card m-2">
@@ -10,10 +10,18 @@ export default function Curso() {
       </div>
       <div className="mt-4 d-flex justify-content-between">
         <a href="#" className="btn btn-light" style={{width: '48%'}}>See summary</a>
-        <a href="#" className="btn btn-light" style={{width: '48%'}}>Go to the course</a>
+        <Link to='/curso'>
+          <a href="#" className="btn btn-light" style={{width: '100%'}}>Go to the course</a>
+        </Link>
       </div>
+      <img className="card-img-top" src="../img/illustration-teacher-students.jpeg" alt="Card image cap" />
     </div>
-    <img className="card-img-top" src="../img/illustration-teacher-students.jpeg" alt="Card image cap" />
+    <Link to='/evaProfe'>
+      <span className='small'>Califica a tu profesor</span>
+    </Link>
+
   </div>
+
+
   )
 }

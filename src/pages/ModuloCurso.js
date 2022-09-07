@@ -1,13 +1,15 @@
+import Navbar from "../components/Navbar"
+import document from "../documents/Voixpassive.pdf"
+import { Link } from "react-router-dom"
+
 const Curso = () => {
     return (
         <div>
             <div className="row">
-                <div className="p-4 mb-2 container bg-primary text-white">
-                    <a> &lt; Regresar</a>
-                </div>
+                <Navbar/>
             </div>
             <div className="row">
-                <div className="col-3 ms-4">
+                <div className="col-3 ms-4 mt-5">
                     <div className="p-5 container-fluid border border-secondary">
                         NOMBRE DEL CURSO
                     </div>
@@ -20,17 +22,18 @@ const Curso = () => {
                                 Evaluación
                             </div>
                             <div className="col">
-                                <button>Ir</button>
+                                <Link to='/evaProfe'>
+                                    <button>Ir</button>
+                                </Link>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
                 <div className="col">
-                    <div className="container-fluid ">
                         <h1>Documento:</h1>
-                        <iframe src="Isw2-FrontEnd\src\documents\Voixpassive.pdf">
+                        <iframe height="250%" width="100%" src={document}>
                         </iframe>
-                    </div>
                 </div>
             </div>
         </div>

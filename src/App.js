@@ -5,6 +5,9 @@ import LogIn from './pages/login';
 import SignUpAl from './pages/signupAl';
 import SignUpPr from './pages/signupPR';
 import NotFound from './components/NotFound';
+import Perfil from './pages/Perfil';
+import Curso from './pages/ModuloCurso'
+import Disponibilidad from './pages/disponiblidad';
 import './App.css';
 import EvaProfe from './pages/evaProfe';
 
@@ -13,13 +16,23 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
+<<<<<<< HEAD
         
           <Route path='/portal' element={<Portal/>}/>
           <Route path='*' element={<NotFound/>}/>
           <Route path='/' element= {<LogIn/>}/>
           <Route path='/signupA' element={<SignUpAl/>}/>
+=======
+          <Route path='/portal' element={<Portal/>}/>
+          <Route path='/curso' element={<Curso/>}/>
+          <Route path='*' element={<NotFound/>}/>
+          <Route path='/' element= {<LogIn/>}/>
+          <Route path='/signUpA' element={<SignUpAl/>}/>
+>>>>>>> c50b6e63aace15f10dd5606710d54bbe3912724d
           <Route path='/signUpP' element={<SignUpPr/>}/>
           <Route path='/evaProfe' element={<EvaProfe/>}/>
+          <Route path='/perfil' element={<Perfil/>}/>
+          <Route path='/disponibilidad' element={<Disponibilidad/>}/>
       </Routes>
     </BrowserRouter>
     {/*<UserConfigModal/>*/}
