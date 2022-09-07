@@ -4,7 +4,7 @@ export default function Curso() {
   return (
     <div className="card m-2">
     <div className="card-body">
-      <h5 className="card-title text-center mb-5">NOMBRE DEL CURSO</h5>
+      <h5 className="card-title text-center mb-5">Course Name</h5>
       <div className="progress">
         <div className="progress-bar" role="progressbar" style={{width: '25%'}} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100}>25%</div>
       </div>
@@ -17,7 +17,7 @@ export default function Curso() {
       <img className="card-img-top" src="../img/illustration-teacher-students.jpeg" alt="Card image cap" />
     </div>
     <Link to='/evaProfe'>
-      <span className='small'>Califica a tu profesor</span>
+      <span className='small'>Review your teacher</span>
     </Link>
 
   </div>
