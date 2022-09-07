@@ -4,10 +4,12 @@ import Foro from "../components/Foro";
 import Zoom from "../components/Zoom";
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';  
+import Cookies from "universal-cookie";
 import {FiSearch} from 'react-icons/fi'
 import { NavLink } from 'react-router-dom';
 
 export default function Portal() {
+  const cookies = new Cookies();
   return (
     <div class="d-flex justify-content-center">
       
@@ -18,7 +20,7 @@ export default function Portal() {
   </div>
   <div className="mb-6">
     <h2 className="text-center">
-      <small className="text-muted">Your student portal, NOMBRE</small>    
+      <small className="text-muted">Your student portal, {cookies.get('primer_nom')}</small>    
     </h2>
   </div>
   

@@ -28,20 +28,19 @@ export default function LogIn(){
           if(response.statusText === "OK"){
             // Guardar datos del usuario en cookies
             const cookies = new Cookies();
-            cookies.set('id_user', response.data.id_user, {path: '/'});
-            cookies.set('id_paciente',response.data.id_paciente,{path:'/'});
-            cookies.set('nombres', response.data.nombres, {path: '/'});
-            cookies.set('apellidos', response.data.apellidos, {path: '/'});
-            cookies.set('telefono', response.data.telefono, {path: '/'});
-            cookies.set('email', response.data.email, {path: '/'});
-            cookies.set('password', response.data.contrasena, {path: '/'});
-            cookies.set('username', response.data.username===null?"":response.data.username, {path: '/'});
-            cookies.set('perfil_user',response.data.perfil_user,{path:'/'});
-            if(cookies.get('perfil_user')==='doctor'){
-              window.location.href='./homeDoctor'
-            }else{
-            window.location.href="./";
-            }
+            cookies.set('ap_mat', response.data.AP_MAT, {path: '/'});
+            cookies.set('ap_pat',response.data.AP_PAT,{path:'/'});
+            cookies.set('doc_id', response.data.DOC_ID, {path: '/'});
+            cookies.set('e_mail', response.data.E_MAIL, {path: '/'});
+            cookies.set('fecha_creacion', response.data.FECHA_CREACION, {path: '/'});
+            cookies.set('fecha_nac', response.data.FECHA_NAC, {path: '/'});
+            cookies.set('id_usuario', response.data.ID_USUARIO, {path: '/'});
+            cookies.set('nom_usuario', response.data.username===null?"":response.data.NOM_USUARIO, {path: '/'});
+            cookies.set('numero_celular',response.data.NUMERO_CELULAR,{path:'/'});
+            cookies.set('password',response.data.PASSWORD,{path:'/'});
+            cookies.set('primer_nom',response.data.PRIMER_NOM,{path:'/'});
+            cookies.set('tipo_usuario',response.data.TIPO_USUARIO,{path:'/'});
+            window.location.href="./portal";
           }
         })
         .catch(function (error) {
