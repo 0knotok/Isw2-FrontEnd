@@ -160,32 +160,33 @@ function Foro1(){
           <h6>Selecciona un Slot vacío para realizar una Pregunta | Selecciona un Slot con una pregunta para subir una Respuesta</h6><br></br>
           <div class="container border mt-3">
             <p>Pregunta 1: {pregunta1}</p>
-            <p>Respuesta: {respuesta1}</p><br></br>
+            <p>Respuesta: {respuesta1}</p>
+              <button className="mb-2 btn btn-primary" onClick={handleClick1}>Slot 1</button>
+              {isShown1 && <Preguntar1 />}
           </div>
-          <div class="container border">
+          <div class="container border mt-3">
           <p>Pregunta 2: {pregunta2}</p>
-          <p>Respuesta: {respuesta2}</p><br></br>
+          <p>Respuesta: {respuesta2}</p>
+            <button className="mb-2 btn btn-primary" onClick={handleClick2}>Slot 2</button>
+            {isShown2 && <Preguntar2 />}
           </div>
-          <div class="container border">
+          <div class="container border mt-3">
           <p>Pregunta 3: {pregunta3}</p>
-          <p>Respuesta: {respuesta3}</p><br></br>
+          <p>Respuesta: {respuesta3}</p>
+          <button className="mb-2 btn btn-primary" onClick={handleClick3}>Slot 3</button>
+        {isShown3 && <Preguntar3 />}
           </div>
         </div>
       </div>
 
+
+
       <div>
-        <button className="mt-4  btn btn-primary" onClick={handleClick1}>Slot 1</button>
-        {isShown1 && <Preguntar1 />}
+
       </div>
 
       <div>
-        <button className="mt-4 btn btn-primary" onClick={handleClick2}>Slot 2</button>
-        {isShown2 && <Preguntar2 />}
-      </div>
 
-      <div>
-        <button className="mt-4 btn btn-primary" onClick={handleClick3}>Slot 3</button>
-        {isShown3 && <Preguntar3 />}
       </div>
 
       <br></br><br></br>
