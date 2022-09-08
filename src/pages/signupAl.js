@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 export default function SignUpAl(){
     return(
-        <div className='container'>
+        <div class="d-flex justify-content-center">
+        <div className='w-75 p-3'>
             <div class="row">
                 <div class="col-md-4 mx-2 my-2">
                     E-Learn
@@ -48,6 +49,7 @@ export default function SignUpAl(){
                 
                 <div class="col-3 "></div>
             </div>
+        </div>
         </div>
     )
 }

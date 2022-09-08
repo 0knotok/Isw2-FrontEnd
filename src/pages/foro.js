@@ -151,7 +151,8 @@ function Foro1(){
   }
 
   return (
-  <div className="container">
+    <div class="d-flex justify-content-center">
+  <div className="w-75 p-3">
     <body>
       <Navbar/>
       <div className="card mt-4" id="foro">
@@ -184,6 +185,7 @@ function Foro1(){
       <br></br><br></br>
     </body>
     
+  </div>
   </div>
   )
 }

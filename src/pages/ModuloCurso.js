@@ -4,7 +4,8 @@ import { Link } from "react-router-dom"
 
 const Curso = () => {
     return (
-        <div>
+        <div class="d-flex justify-content-center">
+        <div className="w-75 p-3">
             <div className="row">
                 <Navbar/>
             </div>
@@ -36,6 +37,7 @@ const Curso = () => {
                         </iframe>
                 </div>
             </div>
+        </div>
         </div>
     )
 }
