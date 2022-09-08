@@ -17,7 +17,8 @@ export default function SignUpPr(){
     }
     
     return(
-        <div className='container'>
+        <div class="d-flex justify-content-center">
+        <div className='w-75 p-3'>
             <div class="row">
                 <div class="col-md-4 mx-2 my-2">
                     E-Learn
@@ -84,6 +85,7 @@ export default function SignUpPr(){
                 
                 <div class="col-3 "></div>
             </div>
+        </div>
         </div>
     )
 }

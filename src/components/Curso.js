@@ -4,11 +4,11 @@ export default function Curso() {
   return (
     <div className="card m-2">
     <div className="card-body">
-      <h5 className="card-title text-center mb-5">NOMBRE DEL CURSO</h5>
+      <h5 className="card-title text-center mb-5">COURSE NAME</h5>
       <div className="progress">
         <div className="progress-bar" role="progressbar" style={{width: '25%'}} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100}>25%</div>
       </div>
-      <div className="mt-4 d-flex justify-content-between">
+      <div className="mt-4 mb-2 d-flex justify-content-between">
         <a href="#" className="btn btn-light" style={{width: '48%'}}>See summary</a>
         <Link to='/curso'>
           <a href="#" className="btn btn-light" style={{width: '100%'}}>Go to the course</a>
@@ -16,8 +16,8 @@ export default function Curso() {
       </div>
       <img className="card-img-top" src="../img/illustration-teacher-students.jpeg" alt="Card image cap" />
     </div>
-    <Link to='/evaProfe'>
-      <span className='small'>Califica a tu profesor</span>
+    <Link className='mb-2 d-flex justify-content-center' to='/evaProfe'>
+      <button className='btn btn-primary' type='button'>Rate your teacher</button>
     </Link>
 
   </div>
