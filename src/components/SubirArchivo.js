@@ -4,18 +4,27 @@ import Cookies from "universal-cookie";
 
 export default function SubirArchivo(){
     
-  function onChange(e){
-    let files = e.target.files;
-    let reader = new FileReader();
-    reader.readAsDataURL(files[0]);
-    reader.onload = (e) => {
-      const url ="http://localhost:4000/profesor/subirArchivo"
-      const formData = {file: e.target.result}
-      return Axios.post(url, formData)
-      .then(response => console.warn("result",response))
-    }
+  function onChange(event){
+    event.preventDefault();
+    
+      let files = event.target.files;
+      let reader = new FileReader();
+      reader.readAsDataURL(files[0]);
+
+      reader.onload = (e) => {
+        const pdf = e.target.result
+        const pdf2= "webo";
+        Axios.post("http://localhost:4000/profesor/subirArchivo",{
+          formData: pdf2,
+        }).then(response => {console.warn("result",response)})
+        .catch(function (error) {
+          console.log(error);
+        });
+      }
+
+      
+      };
   
-  }
 
   return(
         <div className='container'>
