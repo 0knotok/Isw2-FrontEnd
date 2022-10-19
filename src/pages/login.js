@@ -57,8 +57,8 @@ export default function LogIn(){
             <div className='row my-5'></div>
             <div className='row my-5'></div>
             <div className='row my-5 '  >
-                <div className='col-4 '></div>
-                <div className='col-4  text-center px-5 border border-dark p-4 rounded' >
+                <div className='col '></div>
+                <div className='col  text-center px-5 border border-dark p-4 rounded' >
                     <form onSubmit={handleSubmit} method="post">
                         <h1 className='text-center mb-5'>LOGIN</h1>
                         <label>Ingrese su correo electrónico:</label>
@@ -75,7 +75,7 @@ export default function LogIn(){
                         <button type="submit" onSubmit={handleSubmit} method="post" className="btn btn-primary ml-2 align-items-center"> Ingresar</button>
                     </form>
                 </div>
-                <div className='col-4  pd-2'></div>
+                <div className='col '></div>
             </div>
         </div>
     )

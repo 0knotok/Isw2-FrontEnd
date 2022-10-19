@@ -28,6 +28,7 @@ function App() {
           <Route path='/signUpP' element={<SignUpPr/>}/>
           <Route path='/evaProfe' element={<EvaProfe/>}/>
           <Route path='/perfil' element={<Perfil/>}/>
+          <Route path='/recuperar' element={<RecContra/>}/>
           <Route path='/disponibilidad' element={<Disponibilidad/>}/>
       </Routes>
     </BrowserRouter>
