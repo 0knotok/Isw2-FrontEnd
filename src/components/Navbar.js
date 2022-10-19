@@ -1,5 +1,34 @@
+import React from "react";
+import {useNavigate} from 'react-router-dom';
 import { Link } from 'react-router-dom';  
+import {AiOutlineLogout} from 'react-icons/ai';
+import Cookies from "universal-cookie";
+
 const Navbar = () => {
+
+  const cookies = new Cookies()
+
+  const navigate = useNavigate();
+
+  const cerrarSesion = () => {
+    cookies.remove('ap_mat', {path: '/'});
+    cookies.remove('ap_pat', {path: '/'});
+    cookies.remove('doc_id', {path: '/'});
+    cookies.remove('e_mail', {path: '/'});
+    cookies.remove('fecha_creacion', {path: '/'});
+    cookies.remove('fecha_nac', {path: '/'});
+    cookies.remove('id_usuario', {path: '/'});
+    cookies.remove('nom_usuario', {path: '/'});
+    cookies.remove('numero_celular', {path: '/'});
+    cookies.remove('password', {path: '/'});
+    cookies.remove('primer_nom', {path: '/'});
+    cookies.remove('tipo_usuario', {path: '/'});
+    navigate('/');
+  }    
+
+
+
+
     return (
         <div className="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -23,7 +52,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                         <Link to='/'>
-                            <button className='btn btn-danger'>Sign Out</button>
+                            <button className='btn btn-danger' onClick={cerrarSesion}>Sign Out <AiOutlineLogout/> </button>
                         </Link>
                 </div>
             </nav>

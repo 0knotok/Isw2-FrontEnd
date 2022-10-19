@@ -11,13 +11,13 @@ import Cookies from "universal-cookie";
 export default function Portal() {
   const cookies = new Cookies();
   return (
-    <div class="d-flex justify-content-center">
+    <div className="d-flex justify-content-center">
     
 <section className="w-75 p-3 ">
 <Navbar/> 
   <div className="mb-6">
     <h2 className="text-center">
-      <small className="text-muted">Your student portal, {cookies.get("primer_nom")}</small>    
+      <small className="text-muted">Your {cookies.get("tipo_usuario")} portal, {cookies.get("primer_nom")}</small>    
     </h2>
   </div>
   

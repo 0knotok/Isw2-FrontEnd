@@ -4,7 +4,10 @@ export default function Curso() {
   return (
     <div className="card m-2">
     <div className="card-body">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 532f7ba13bcb3253d5ab1a66e14036d635a4f753
       <h5 className="card-title text-center mb-5">COURSE NAME</h5>
       <div className="progress">
         <div className="progress-bar" role="progressbar" style={{width: '25%'}} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100}>25%</div>
