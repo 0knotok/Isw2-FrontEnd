@@ -30,6 +30,7 @@ function App() {
           <Route path='/perfil' element={<Perfil/>}/>
           <Route path='/recuperar' element={<RecContra/>}/>
           <Route path='/disponibilidad' element={<Disponibilidad/>}/>
+          <Route path='/subirArchivo' element={<SubirArchivo/>}/>
       </Routes>
     </BrowserRouter>
     {/*<UserConfigModal/>*/}
