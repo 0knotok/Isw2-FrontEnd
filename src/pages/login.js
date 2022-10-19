@@ -39,12 +39,13 @@ export default function LogIn(){
             cookies.set('numero_celular',response.data.NUMERO_CELULAR,{path:'/'});
             cookies.set('password',response.data.PASSWORD,{path:'/'});
             cookies.set('primer_nom',response.data.PRIMER_NOM,{path:'/'});
-            cookies.set('tipo_usuario',response.data.TIPO_USUARIO,{path:'/'});
+            cookies.set('tipo_usuario',response.data.TIPO_USUARIO===0?"administrator":response.data.TIPO_USUARIO===1?"teacher":"student",{path:'/'});
             window.location.href="./portal";
           }
         })
         .catch(function (error) {
           console.log(error);
+          alert("Credenciales incorrectas");
         });
         console.log(formData);
       }
@@ -54,9 +55,9 @@ export default function LogIn(){
             <div className='row my-5'></div>
             <div className='row my-5'></div>
             <div className='row my-5'></div>
-            <div className='row my-5' >
+            <div className='row my-5 '  >
                 <div className='col-4 '></div>
-                <div className='col-4  text-center px-5' >
+                <div className='col-4  text-center px-5 border border-dark p-4 rounded' >
                     <form onSubmit={handleSubmit} method="post">
                         <h1 className='text-center mb-5'>LOGIN</h1>
                         <label>Ingrese su correo electrónico:</label>

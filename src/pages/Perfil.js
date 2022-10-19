@@ -60,15 +60,15 @@ const Perfil = () => {
             <div className="row my-4">
               <div className="col-md-8 offset-md-2">
                 <ul className="nav nav-tabs" id="myTab" role="tablist">
-                  <li className="nav-item" role="presentation">
+                    <li className="nav-item" role="presentation">
                     <button className="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
                      type="button" role="tab" aria-controls="home" aria-selected="true">Datos del Usuario</button>
                   </li>
-                            <li className="nav-item" role="presentation">
-                                <button className="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
-                                    type="button" role="tab" aria-controls="profile" aria-selected="false">Actualizar Datos</button>
-                            </li>
-                        </ul>
+                <li className="nav-item" role="presentation">
+                    <button className="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                     type="button" role="tab" aria-controls="profile" aria-selected="false">Actualizar Datos</button>
+                </li>
+                </ul>
                         <div className="tab-content" id="myTabContent">
                           <br/>
                               <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
