@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';  
 import Axios from "axios";
 import Cookies from "universal-cookie";
 
@@ -63,9 +64,12 @@ export default function LogIn(){
                         <div className="input-group my-3">                        
                             <input type="text" name="email" className="form-control mx-2 my-2" onChange={handleChangeInput} placeholder='E-mail' required></input>
                         </div>
-                        <label>Ingrese su contraseña:</label>                        
-                        <div className="input-group mb-3 my-3 mb-5">
+                        <label className="mb-3" >Ingrese su contraseña:</label>                        
+                        <div className="input-group">
                             <input type="password" name="password" className="form-control mx-2 my-2" onChange={handleChangeInput} placeholder='Contraseña' required></input>
+                        </div>
+                        <div className = "input-group mb-5">
+                        <Link className="nav-link" to='/recuperar'><button type="button" class="btn btn-link">Olvidé mi contraseña</button></Link>
                         </div>
                         <button type="submit" onSubmit={handleSubmit} method="post" className="btn btn-primary ml-2 align-items-center"> Ingresar</button>
                     </form>

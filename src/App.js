@@ -9,6 +9,7 @@ import Perfil from './pages/Perfil';
 import Curso from './pages/ModuloCurso'
 import Foro from './pages/foro';
 import Disponibilidad from './pages/disponiblidad';
+import RecContra from './pages/recuperacionContra'
 import './App.css';
 import EvaProfe from './pages/evaProfe';
 
@@ -27,6 +28,7 @@ function App() {
           <Route path='/evaProfe' element={<EvaProfe/>}/>
           <Route path='/perfil' element={<Perfil/>}/>
           <Route path='/disponibilidad' element={<Disponibilidad/>}/>
+          <Route path='/recuperar' element={<RecContra/>}/>
       </Routes>
     </BrowserRouter>
     {/*<UserConfigModal/>*/}
