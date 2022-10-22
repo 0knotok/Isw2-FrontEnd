@@ -13,6 +13,7 @@ import RecContra from './pages/recuperacionContra'
 import SubirArchivo from './components/SubirArchivo';
 import './App.css';
 import EvaProfe from './pages/evaProfe';
+import CrearEvaluacion from './pages/crearEvaluacion';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path='/signUpA' element={<SignUpAl/>}/>
           <Route path='/signUpP' element={<SignUpPr/>}/>
           <Route path='/evaProfe' element={<EvaProfe/>}/>
+          <Route path='/crearEvaluacion' element={<CrearEvaluacion/>}/>
           <Route path='/perfil' element={<Perfil/>}/>
           <Route path='/recuperar' element={<RecContra/>}/>
           <Route path='/disponibilidad' element={<Disponibilidad/>}/>
