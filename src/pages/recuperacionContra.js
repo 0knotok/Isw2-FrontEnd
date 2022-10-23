@@ -8,6 +8,7 @@ export default function RecContra(){
 
     const [valTok, setValTok] = useState(0);
     const [mostarValTok, setMostrarValTok] = useState(false);
+    const [confTok, setConfTok] = useState('');
 
     const handleClickToken =()=>
     {
@@ -32,32 +33,17 @@ export default function RecContra(){
       }
     function handleSubmit(event) {
         event.preventDefault();
-    
-        Axios.post("http://localhost:4000/visitante/iniciarSesion",{
+        Axios.put("http://localhost:4000/visitante/cambioContraseña",{
           email: formData.email,
           password: formData.password
         }).then(function (response) {
-          if(response.statusText === "OK"){
-            // Guardar datos del usuario en cookies
-            const cookies = new Cookies();
-            cookies.set('ap_mat', response.data.AP_MAT, {path: '/'});
-            cookies.set('ap_pat',response.data.AP_PAT,{path:'/'});
-            cookies.set('doc_id', response.data.DOC_ID, {path: '/'});
-            cookies.set('e_mail', response.data.E_MAIL, {path: '/'});
-            cookies.set('fecha_creacion', response.data.FECHA_CREACION, {path: '/'});
-            cookies.set('fecha_nac', response.data.FECHA_NAC, {path: '/'});
-            cookies.set('id_usuario', response.data.ID_USUARIO, {path: '/'});
-            cookies.set('nom_usuario', response.data.username===null?"":response.data.NOM_USUARIO, {path: '/'});
-            cookies.set('numero_celular',response.data.NUMERO_CELULAR,{path:'/'});
-            cookies.set('password',response.data.PASSWORD,{path:'/'});
-            cookies.set('primer_nom',response.data.PRIMER_NOM,{path:'/'});
-            cookies.set('tipo_usuario',response.data.TIPO_USUARIO===0?"administrator":response.data.TIPO_USUARIO===1?"teacher":"student",{path:'/'});
-            window.location.href="./portal";
+          if(response.statusText === "OK" && confTok === valTok){          
+            console.log("todo gucci");
           }
         })
         .catch(function (error) {
           console.log(error);
-          alert("Credenciales incorrectas");
+          alert("No existe el correo");
         });
         console.log(formData);
       }
@@ -76,15 +62,14 @@ export default function RecContra(){
                     
                     <label>Ingrese su correo electrónico:</label>
                     <div className="my-3">                        
-                        <input type="text" name="email" className="form-control mx-2 my-2 input-group" onChange={handleChangeInput} placeholder="E-mail" required></input>
+                        <input type="text" name="email" className="form-control mx-2 my-2 input-group" placeholder="E-mail" required></input>
                     </div>
                     <button type="button" onClick={() =>handleClickToken()} onSubmit={handleSubmit} className="btn btn-primary ml-2 align-items-center mt-4 mb-3 input-group">Consigue tu codigo de verificacion</button>
                     <h1>{mostarValTok? valTok:null}</h1>    
                 </form>
-
                 <form>
                     <div className="input-group my-3">                        
-                        <input type="text" name="codver" className="form-control mx-2 my-2" onChange={handleChangeInput} placeholder='Código de verificacion' required></input>
+                        <input  value={confTok}  type="text" name="codver" className="form-control mx-2 my-2" onChange={e => setConfTok(e.target.value)} placeholder='Código de verificacion' required></input>
                     </div>
                     <label className="mb-3" >Ingrese su nueva contraseña:</label>                        
                     <div className="input-group">
