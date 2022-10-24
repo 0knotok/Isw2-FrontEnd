@@ -11,8 +11,10 @@ import Axios from "axios";
 
 export default function Portal() {
   const cookies = new Cookies();
+ /* var solouna = 0;
   //Conseguir los cursos de un usuario.
- /*const cursos = Axios.post("https://localhost:4000/visitante/cursosUsuarios",{
+  if(solouna === 0){
+    const cursos = Axios.post("https://localhost:4000/visitante/cursosUsuarios",{
     ID_USUARIO:cookies.get("id_usuario")
   }).then(function(response)
   {if(response.statusText === "OK"){
@@ -25,7 +27,10 @@ export default function Portal() {
   {
     console.log(error);
     alert(cookies.get("id_usuario"));
-  });*/
+  })
+  solouna++
+};*/
+ 
 
 
   return (
@@ -37,9 +42,7 @@ export default function Portal() {
     <h2 className="text-center">
       <small className="text-muted">Your {cookies.get("tipo_usuario")} portal, {cookies.get("primer_nom")}</small>    
     </h2>
-  </div>
-  
-  
+  </div>  
   <div className="d-flex mt-6 justify-content-between">
     <div>
       <h1 className="font-weight-normal">My courses</h1>
@@ -68,9 +71,8 @@ export default function Portal() {
       </div>
     </div>
     <div className="cursosEstudiante">
-      <Curso/>
-      <Curso/>
-      <Curso/>
+      <Curso nombre="BASIC 1" ptj="75%"/>
+      <Curso nombre="BASIC 2" ptj="5%"/>
     </div>
     <div className="d-flex justify-content-between mt-5">
       <div>
