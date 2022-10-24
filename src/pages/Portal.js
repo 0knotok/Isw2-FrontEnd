@@ -7,9 +7,27 @@ import { Link } from 'react-router-dom';
 import {FiSearch} from 'react-icons/fi'
 import { NavLink } from 'react-router-dom';
 import Cookies from "universal-cookie";
+import Axios from "axios";
 
 export default function Portal() {
   const cookies = new Cookies();
+  //Conseguir los cursos de un usuario.
+ /*const cursos = Axios.post("https://localhost:4000/visitante/cursosUsuarios",{
+    ID_USUARIO:cookies.get("id_usuario")
+  }).then(function(response)
+  {if(response.statusText === "OK"){
+      const nombreCursos = response.data.map(cursos => cursos.NOMBRE);
+      const porcentajeCrusos = response.data.map(cursos => cursos.PORCENTAJE);
+      const fechaIni = response.data.map(cursos => cursos.FECHA_INICIO);
+      const fechaFin = response.data.map(cursos => cursos.FECHA_FIN);
+  }
+}).catch(function(error)
+  {
+    console.log(error);
+    alert(cookies.get("id_usuario"));
+  });*/
+
+
   return (
     <div className="d-flex justify-content-center">
     
