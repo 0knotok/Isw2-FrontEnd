@@ -71,8 +71,8 @@ export default function Portal() {
       </div>
     </div>
     <div className="cursosEstudiante">
-      <Curso nombre="ATELIER FRANÇAIS" ptj="72%"/>
-      <Curso nombre="ENGLISH WORKSHOP" ptj="99%"/>
+      <Curso nombre="BASIC 1" ptj="75%"/>
+      <Curso nombre="BASIC 2" ptj="5%"/>
     </div>
     <div className="d-flex justify-content-between mt-5">
       <div>
