@@ -5,25 +5,30 @@ import Cookies from "universal-cookie";
 export default function SubirArchivo(){
 
   const[formFile, setFile] = useState();
+  const[formName, setName] = useState();
 
   function handleChangeInput(event) {
     event.preventDefault();
     let files = event.target.files;
+    setName(files[0].name);
     let reader = new FileReader();
     reader.readAsDataURL(files[0]);
     reader.onload = (e) => {
       const pdf = e.target.result;
       setFile(pdf);
     }
-    
   }
 
     
   function submitFile(e){
       let reader = formFile;
+      let nombre = formName;
+      console.log(nombre);
+      reader = reader.substring(28, reader.length);
       if(reader){
           Axios.post("http://localhost:4000/profesor/subirArchivo",{
-            formData: reader,
+            formName: nombre,
+            formData: reader
           }).then(response => {console.warn("result",response)})
           .catch(function (error) {
             console.log(error);
