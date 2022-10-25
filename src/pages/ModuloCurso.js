@@ -23,8 +23,8 @@ const Curso = () => {
                                 Evaluación
                             </div>
                             <div className="col">
-                                <Link to='/evaProfe'>
-                                    <button>Ir</button>
+                                <Link to='/FormularioEvaluacion'>
+                                    <button type="button" className="btn btn-success">Ir</button>
                                 </Link>
                             </div>
                         </div>
@@ -33,7 +33,7 @@ const Curso = () => {
                 </div>
                 <div className="col">
                         <h1>Documento:</h1>
-                        <iframe height="250%" width="100%" src={document}>
+                        <iframe height="170%" width="100%" src={document}>
                         </iframe>
                 </div>
             </div>
