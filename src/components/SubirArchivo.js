@@ -26,6 +26,7 @@ export default function SubirArchivo(){
   
   const[formFile, setFile] = useState();
   const[formName, setName] = useState();
+  
 
   function handleChangeInput(event) {
     event.preventDefault();
@@ -43,18 +44,19 @@ export default function SubirArchivo(){
   function submitFile(e){
       let reader = formFile;
       let nombre = formName;
-
+      let idCurso = esp;
       if(reader){
-        if(esp != 0){
+        if(idCurso != 0){
           reader = reader.substring(28, reader.length);
           Axios.post("http://localhost:4000/profesor/subirArchivo",{
+            formIdCurso: idCurso,
             formName: nombre,
             formData: reader
           }).then(response => {console.warn("result",response)})
           .catch(function (error) {
             console.log(error);
           });
-        
+          alert("Material uploaded");
         }else{alert("Choose a course first")}
       }else{alert("Choose a file first")}
       };
