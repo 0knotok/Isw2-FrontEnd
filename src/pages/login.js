@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import Axios from "axios";
 import Cookies from "universal-cookie";
 
-export default function LogIn(){
-
+export default function LogIn(props){
+  const cookies = new Cookies();
+  
     const[formData, setFormData] = useState(
         {
           email: "",
@@ -41,7 +42,12 @@ export default function LogIn(){
             cookies.set('password',response.data.PASSWORD,{path:'/'});
             cookies.set('primer_nom',response.data.PRIMER_NOM,{path:'/'});
             cookies.set('tipo_usuario',response.data.TIPO_USUARIO===0?"administrator":response.data.TIPO_USUARIO===1?"teacher":"student",{path:'/'});
-            window.location.href="./portal";
+            let tipo_user = cookies.get('tipo_usuario');
+            if (tipo_user === "student"){
+              window.location.href="./PortalAlumno";
+            }else if (tipo_user ==="teacher"){
+              window.location.href="./PortalProfesor";
+            }
           }
         })
         .catch(function (error) {
