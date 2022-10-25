@@ -7,10 +7,14 @@ import SignUpPr from './pages/signupPR';
 import NotFound from './components/NotFound';
 import Perfil from './pages/Perfil';
 import Curso from './pages/ModuloCurso'
-import Foro from './pages/foro';
+import ForoPagina from './pages/foro';
 import Disponibilidad from './pages/disponiblidad';
 import './App.css';
 import EvaProfe from './pages/evaProfe';
+import CrearExamen from './pages/crearExamen';
+import Examen from './pages/examen';
+import RevisarExamen from './pages/revisarExamen';
+
 
 function App() {
   return (
@@ -19,7 +23,10 @@ function App() {
         <Routes>
           <Route path='/portal' element={<Portal/>}/>
           <Route path='/curso' element={<Curso/>}/>
-          <Route path='/foro' element={<Foro/>}/>
+          <Route path='/foro' element={<ForoPagina/>}/>
+          <Route path='/crearexamen' element={<CrearExamen/>}/>
+          <Route path='/examen' element={<Examen/>}/>
+          <Route path='/revisarexamen' element={<RevisarExamen/>}/>
           <Route path='*' element={<NotFound/>}/>
           <Route path='/' element= {<LogIn/>}/>
           <Route path='/signUpA' element={<SignUpAl/>}/>

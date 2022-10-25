@@ -1,0 +1,102 @@
+import React, { useState } from "react";
+import FactoryHilo from "./ObjetosForo/FactoryHilo";
+
+function ConsultaForo(){
+  
+    const P = (event) => {
+      event.preventDefault();
+      setP(event.target[0].value);
+    };
+
+    const R = (event) => {
+      event.preventDefault();
+      setR(event.target[0].value);
+      setIsShown(current => !current);
+    };
+
+    const [pregunta, setP] = useState("");
+    const [respuesta, setR] = useState("");
+    const [isShown, setIsShown] = useState(false);
+
+    const handleClick = event => {
+      setIsShown(current => !current);
+    };
+    
+    function Preguntar() {
+  
+      if (pregunta !== "") {
+        return (
+          <div>
+            <div className="mt-2" id="respuesta">
+              <form onSubmit={R}>
+                <label for="txtresp">Responde a una pregunta:</label><br></br>
+                <input className="mt-3 form-control" id="txtresp" type="text"></input><br></br>
+                <button className="mb-3 btn btn-primary" type="submit">Responder</button>
+              </form>
+            </div>
+          </div>
+        );
+      }
+      
+      else {
+        return (
+          <div>
+            <div className="mt-2" id="pregunta">
+              <form onSubmit={P}>
+                <label for="txtpreg">Ingresa una pregunta:</label><br></br>
+                <input className="mt-3 form-control" id="txtpreg" type="text"></input><br></br>
+                <button className="mb-3 btn btn-primary" type="submit">Preguntar</button>
+              </form>
+            </div>
+          </div>
+        );
+      }
+    
+    }
+
+    const Factory = new FactoryHilo()
+    const hilo = Factory.crearHilo('Consulta');
+    const consulta = hilo.crearEstado('Pendiente');
+
+    function CrearConsultaPendiente(){
+      if (pregunta !== "") {
+        consulta.setmensaje = pregunta;
+        const renderPre = consulta.getmensaje;
+
+        //Añadir a un Array
+
+        return renderPre;
+      }
+    }
+
+    const m = consulta.getmensaje
+    const hilo2 = Factory.crearHilo('Consulta');
+    const consulta2 = hilo2.crearEstado('Resuelta');
+
+    function CrearConsultaResuelta() {
+      if (respuesta !== "") {
+        consulta2.setmensaje = m;
+        consulta2.setrespuesta = respuesta;
+        const renderRes = consulta2.getrespuesta;
+
+        //Reemplazar en Array
+
+        return renderRes;
+      }
+    }
+
+    return (
+        <div class="container border mb-3">
+            <div className="mt-3">
+                <p>Pregunta: {CrearConsultaPendiente()}</p>
+            </div>
+            <div className="mt-2">
+                <p>Respuesta: {CrearConsultaResuelta()}</p>
+            </div>
+            <button className="mb-3 btn btn-primary" onClick={handleClick}>Consulta</button>
+            {isShown && <Preguntar />}
+        </div>
+    )
+  }
+
+export default ConsultaForo
