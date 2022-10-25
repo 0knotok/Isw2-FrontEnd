@@ -7,7 +7,7 @@ import SignUpPr from './pages/signupPR';
 import NotFound from './components/NotFound';
 import PerfilAlumno from './pages/PerfilAlumno';
 import Curso from './pages/ModuloCurso'
-import Foro from './pages/foro';
+import ForoPagina from './pages/foro';
 import Disponibilidad from './pages/disponiblidad';
 import RecContra from './pages/recuperacionContra'
 import SubirArchivo from './components/SubirArchivo';
@@ -27,7 +27,10 @@ function App() {
           <Route path='/PortalAlumno' element={<PortalAlumno/>}/>
           <Route path='/PortalProfesor' element={<PortalProfesor/>}/>
           <Route path='/curso' element={<Curso/>}/>
-          <Route path='/foro' element={<Foro/>}/>
+          <Route path='/foro' element={<ForoPagina/>}/>
+          <Route path='/crearexamen' element={<CrearExamen/>}/>
+          <Route path='/examen' element={<Examen/>}/>
+          <Route path='/revisarexamen' element={<RevisarExamen/>}/>
           <Route path='*' element={<NotFound/>}/>
           <Route path='/' element= {<LogIn/>}/>
           <Route path='/signUpA' element={<SignUpAl/>}/>
