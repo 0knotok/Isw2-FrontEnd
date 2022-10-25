@@ -48,7 +48,6 @@ export default function LogIn(){
           console.log(error);
           alert("Credenciales incorrectas");
         });
-        console.log(formData);
       }
 
     return(
@@ -70,7 +69,7 @@ export default function LogIn(){
                             <input type="password" name="password" className="form-control mx-2 my-2" onChange={handleChangeInput} placeholder='Contraseña' required></input>
                         </div>
                         <div className = "input-group mb-5">
-                        <Link className="nav-link" to='/recuperar'><button type="button" class="btn btn-link">Olvidé mi contraseña</button></Link>
+                        <Link className="nav-link" to='/recuperar'><button type="button" className="btn btn-link">Olvidé mi contraseña</button></Link>
                         </div>
                         <button type="submit" onSubmit={handleSubmit} method="post" className="btn btn-primary ml-2 align-items-center"> Ingresar</button>
                     </form>

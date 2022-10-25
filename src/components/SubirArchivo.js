@@ -4,6 +4,26 @@ import Cookies from "universal-cookie";
 
 export default function SubirArchivo(){
 
+  const [especialidad, setEspecialidad] = React.useState([]);
+  const[esp, setEsp] = React.useState("0");
+
+  React.useEffect(() => {
+    
+    Axios.get('http://localhost:4000/curso/mostrarCursos')
+      .then(function (response) {
+        // handle success
+        setEspecialidad(response.data);
+      }, [])
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
+      });
+  }, []
+  )
+  
   const[formFile, setFile] = useState();
   const[formName, setName] = useState();
 
@@ -23,9 +43,10 @@ export default function SubirArchivo(){
   function submitFile(e){
       let reader = formFile;
       let nombre = formName;
-      console.log(nombre);
-      reader = reader.substring(28, reader.length);
+
       if(reader){
+        if(esp != 0){
+          reader = reader.substring(28, reader.length);
           Axios.post("http://localhost:4000/profesor/subirArchivo",{
             formName: nombre,
             formData: reader
@@ -34,10 +55,9 @@ export default function SubirArchivo(){
             console.log(error);
           });
         
+        }else{alert("Choose a course first")}
       }else{alert("Choose a file first")}
       };
-
-  
 
   return(
         <div className='container'>
@@ -47,10 +67,12 @@ export default function SubirArchivo(){
            
             <div>
               <p>Elegir curso</p>
-              <select name="cursoUploadFile">
-                <option defaultValue="curso1">Curso 1</option>
-                <option value="curso2">Curso 2</option>
-                <option value="curso3">Curso 3</option>
+              
+              <select className="form-control me-2" name="especialidad" id="especialidad" aria-label="selectEsp" onChange={(e)=>{
+                    setEsp(e.target.value);
+                  }} required>
+                  <option defaultValue="0"></option>
+                  {especialidad.map(especialidad => <option key={especialidad.ID_CURSO} value={especialidad.ID_CURSO}>{especialidad.NOMBRE}</option>)}
               </select>
             </div>
             <div>
