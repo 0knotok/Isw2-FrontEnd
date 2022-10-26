@@ -77,10 +77,22 @@ export default function LogIn(props){
                         <div className = "input-group mb-5">
                         <Link className="nav-link" to='/recuperar'><button type="button" className="btn btn-link">Olvidé mi contraseña</button></Link>
                         </div>
-                        <button type="submit" onSubmit={handleSubmit} method="post" className="btn btn-primary ml-2 align-items-center"> Ingresar</button>
-                    </form>
+                        <button type="submit" onSubmit={handleSubmit} method="post" className="btn btn-primary ml-2 align-items-center"> Ingresar</button>    
+                    </form>    
+                    
+                    <div className="row my-2 mx-3 p-4">
+                      <div className="row px-5 mx-5 py-3">
+                        Registrarse como
+                      </div>
+                      <div className="col">
+                        <Link className="nav-link" to='/signUpP'><button type="button" className="btn btn-primary">Profesor</button></Link>
+                      </div>
+                      <div className="col">
+                        <Link className="nav-link" to='signUpA'><button className="btn btn-primary">Alumno</button></Link>
+                      </div>
+                    </div>
                 </div>
-                <div className='col '></div>
+                <div className='col '> </div>
             </div>
         </div>
     )

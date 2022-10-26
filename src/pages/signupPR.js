@@ -75,7 +75,7 @@ export default function SignUpPr(){
                     <div class="row">
                         <div class="col-4 mx-2"></div>
                         <div class="col-2 mx-4">
-                            <Link to ='/portal'>
+                            <Link to ='/'>
                                 <button class="btn btn-primary">Registrese</button>
                             </Link>
                         </div>
