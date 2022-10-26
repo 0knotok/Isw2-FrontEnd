@@ -47,6 +47,8 @@ export default function LogIn(props){
               window.location.href="./PortalAlumno";
             }else if (tipo_user ==="teacher"){
               window.location.href="./PortalProfesor";
+            }else if (tipo_user ==="administrator"){
+              window.location.href="./PortalAdministrador";
             }
           }
         })

@@ -1,26 +1,26 @@
-import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import PortalAlumno from './pages/PortalAlumno';
-import LogIn from './pages/login';
-import SignUpAl from './pages/signupAl';
-import SignUpPr from './pages/signupPR';
-import NotFound from './components/NotFound';
-import PerfilAlumno from './pages/PerfilAlumno';
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import PortalAlumno from './pages/PortalAlumno'
+import LogIn from './pages/login'
+import SignUpAl from './pages/signupAl'
+import SignUpPr from './pages/signupPR'
+import NotFound from './components/NotFound'
+import Perfil from './pages/Perfil'
 import Curso from './pages/ModuloCurso'
-import ForoPagina from './pages/foro';
-import Disponibilidad from './pages/disponiblidad';
+import ForoPagina from './pages/foro'
+import Disponibilidad from './pages/disponiblidad'
 import RecContra from './pages/recuperacionContra'
-import SubirArchivo from './components/SubirArchivo';
-import './App.css';
-import EvaProfe from './pages/evaProfe';
-import CrearEvaluacion from './pages/crearEvaluacion';
-import CreacionFormulario from './pages/CreacionFormulario';
-import FormularioEvaluacion from './pages/FormularioEvaluacion';
-import PortalProfesor from './pages/PortalProfesor';
-import PerfilProfesor from './pages/PerfilProfesor';
+import SubirArchivo from './components/SubirArchivo'
+import './App.css'
+import EvaProfe from './pages/evaProfe'
+import CrearEvaluacion from './pages/crearEvaluacion'
+import CreacionFormulario from './pages/CreacionFormulario'
+import FormularioEvaluacion from './pages/FormularioEvaluacion'
+import PortalProfesor from './pages/PortalProfesor'
 import CrearExamen from './pages/crearExamen'
 import Examen from './pages/examen'
 import RevisarExamen from './pages/revisarExamen'
+import PortalAdministrador from './pages/PortalAdministrador'
 
 function App() {
   return (
@@ -40,13 +40,13 @@ function App() {
           <Route path='/signUpP' element={<SignUpPr/>}/>
           <Route path='/evaProfe' element={<EvaProfe/>}/>
           <Route path='/crearEvaluacion' element={<CrearEvaluacion/>}/>
-          <Route path='/PerfilAlumno' element={<PerfilAlumno/>}/>
-          <Route path='/PerfilProfesor' element={<PerfilProfesor/>}/>
+          <Route path='/Perfil' element={<Perfil/>}/>
           <Route path='/recuperar' element={<RecContra/>}/>
           <Route path='/disponibilidad' element={<Disponibilidad/>}/>
           <Route path='/subirArchivo' element={<SubirArchivo/>}/>
           <Route path='/CreacionFormulario' element={<CreacionFormulario/>}/>
           <Route path='/FormularioEvaluacion' element={<FormularioEvaluacion/>}/>
+          <Route path='/PortalAdministrador' element={<PortalAdministrador/>}/>
       </Routes>
     </BrowserRouter>
     {/*<UserConfigModal/>*/}

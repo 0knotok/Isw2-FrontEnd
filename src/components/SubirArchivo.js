@@ -64,11 +64,11 @@ export default function SubirArchivo(){
   return(
         <div className='container'>
             <div>
-              <h2>Subir archivo</h2>
+              <h2>Insert Material</h2>
             </div>
            
             <div>
-              <p>Elegir curso</p>
+              <p>Choose Course</p>
               
               <select className="form-control me-2" name="especialidad" id="especialidad" aria-label="selectEsp" onChange={(e)=>{
                     setEsp(e.target.value);

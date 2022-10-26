@@ -12,12 +12,13 @@ export default function CrearEvaluacion(){
     <div className="container">
       <h1>Evaluación</h1>
       <div className="container">
-        <img style={{height: '100%', width: '100%'}} src="https://josefacchin.com/wp-content/uploads/2020/02/como-quitar-el-fondo-de-una-imagen.png" />
+        
+        <iframe style={{height: '800px', width: '100%'}} src="https://forms.gle/ST4kV3xED15uksUd7">
+                        </iframe>
         <div className="col-md-12 text-center">
           <button type="button" className="btn btn-success">Enviar formulario</button>
           <Link to='/Curso'>
-          <button type="button" className="btn btn-danger">Cancelar</button></Link>
-          
+          <button type="button" className="btn btn-danger">Volver</button></Link>
         </div>
       </div>
     </div>
