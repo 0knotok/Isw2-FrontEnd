@@ -18,10 +18,6 @@ export default function Curso(props) {
       </div>
       <img className="card-img-top" src="../img/illustration-teacher-students.jpeg" alt="Card image cap" />
     </div>
-
-    <Link className='mb-2 d-flex justify-content-center' to='/evaProfe'>
-      <button className='btn btn-primary' type='button'>Rate your teacher</button>
-    </Link>
   </div>
   )
 }
