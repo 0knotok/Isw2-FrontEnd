@@ -8,20 +8,19 @@ export default function Curso(props) {
 
       <h5 className="card-title text-center mb-5 mt-3">{props.nombre}</h5>
       <div className="progress">
-        <div className="progress-bar" style={{width: `${props.ptj}`}} role="progressbar" aria-valuenow={25} aria-valuemin={0} aria-valuemax={100}>{props.ptj}%</div>
+      
+        <div className="progress-bar" role="progressbar" style={{width: `${props.ptj}`}} aria-valuenow={25} aria-valuemin={0} aria-valuemax={100}>{props.ptj}</div>
       </div>
       <div className="mt-4 mb-2 d-flex justify-content-between">
-        <a href="#" className="btn btn-light" style={{width: '48%'}}>See summary</a>
+        <a className="btn btn-light" style={{width: '48%'}}>See summary</a>
         <Link to='/curso'>
-          <a href="#" className="btn btn-light" style={{width: '100%'}}>Go to the course</a>
+          <a className="btn btn-light" style={{width: '100%'}}>Go to the course</a>
         </Link>
       </div>
       <img className="card-img-top" src="../img/illustration-teacher-students.jpeg" alt="Card image cap" />
     </div>
-
-    <Link className='mb-2 d-flex justify-content-center' to='/evaProfe'>
-      <button className='btn btn-primary' type='button'>Rate your teacher</button>
-    </Link>
-  </div>
-  )
+  </div>
+  )
 }
+
+

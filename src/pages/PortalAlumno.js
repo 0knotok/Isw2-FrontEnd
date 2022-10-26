@@ -90,7 +90,7 @@ useEffect(() => {
     
     <div className="cursosEstudiante">
     {cursos.map((curso) => (
-      <Curso key={curso.ID_CURSO} nombre={curso.NOMBRE} ptj ={curso.PORCENTAJE}/>
+      <Curso key={curso.ID_CURSO} nombre={curso.NOMBRE} ptj ={`${curso.PORCENTAJE}%`}/>
       ))}
     </div>
     
