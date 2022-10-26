@@ -133,7 +133,7 @@ const Perfil = () => {
                                         <div className="form-group row  mb-2">
                                             <label for="Usuario" className="col-4">Contraseña</label>
                                             <div className="col-8">
-                                                <input type="text" name='password' className="form-control" value={cookies.get('password')}/>
+                                                <input type="password" name='password' className="form-control" value={cookies.get('password')}/>
                                             </div>
                                         </div>
                                         <div className="form-group row  mb-2">
