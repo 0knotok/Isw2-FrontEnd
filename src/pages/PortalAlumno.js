@@ -81,11 +81,8 @@ export default function Portal() {
     </div>
     <div className="cursosEstudiante">
       <Foro/>
-      <Foro/>
-      <Foro/>
     </div>
   </div>
-  <Zoom/>
 </section>
 </div>
   )

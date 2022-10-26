@@ -18,6 +18,9 @@ import CreacionFormulario from './pages/CreacionFormulario';
 import FormularioEvaluacion from './pages/FormularioEvaluacion';
 import PortalProfesor from './pages/PortalProfesor';
 import PerfilProfesor from './pages/PerfilProfesor';
+import CrearExamen from './pages/crearExamen'
+import Examen from './pages/examen'
+import RevisarExamen from './pages/revisarExamen'
 
 function App() {
   return (
