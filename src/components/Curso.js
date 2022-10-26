@@ -13,7 +13,7 @@ export default function Curso(props) {
       </div>
       <div className="mt-4 mb-2 d-flex justify-content-between">
         <a className="btn btn-light" style={{width: '48%'}}>See summary</a>
-        <Link to='/curso'>
+        <Link to={'/curso?id_curso='+ props.id+'&nombre_curso='+props.nombre}>
           <a className="btn btn-light" style={{width: '100%'}}>Go to the course</a>
         </Link>
       </div>

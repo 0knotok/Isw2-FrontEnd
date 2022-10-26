@@ -49,7 +49,6 @@ export default function Portal() {
   }, []
   )
 
-
   return (
     <div className="d-flex justify-content-center">
 
@@ -90,7 +89,8 @@ export default function Portal() {
 
           <div className="cursosEstudiante">
             {cursos.map((curso) => (
-              <Curso key={curso.ID_CURSO} nombre={curso.NOMBRE} ptj={`${curso.PORCENTAJE}%`} />
+            
+              <Curso key={curso.ID_CURSO} id={curso.ID_CURSO} nombre={curso.NOMBRE} ptj={`${curso.PORCENTAJE}%`} />
             ))}
           </div>
 
