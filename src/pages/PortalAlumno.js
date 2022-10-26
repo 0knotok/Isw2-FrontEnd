@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import Curso from "../components/Curso";
 import Foro from "../components/Foro";
 import Zoom from "../components/Zoom";
@@ -30,7 +30,24 @@ export default function Portal() {
   })
   solouna++
 };*/
+const [cursos, setCursos] = useState([]);  //array de datos
+
+useEffect(() => {
+
+ Axios.post("http://localhost:4000/estudiante/mostrarCursos",{
+   id_usuario: cookies.get('id_usuario')
+ }).then(function (response) {
+   if(response.statusText === "OK"){
+     // Enviar cursos
+     setCursos(response.data.rows);
+   }
+ })
+ .catch(function (error) {
+   console.log(error);
+ });
  
+}, []
+) 
 
 
   return (
@@ -70,10 +87,13 @@ export default function Portal() {
         </select>
       </div>
     </div>
+    
     <div className="cursosEstudiante">
-      <Curso nombre="BASIC 1" ptj="75%"/>
-      <Curso nombre="BASIC 2" ptj="5%"/>
+    {cursos.map((curso) => (
+      <Curso key={curso.ID_CURSO} nombre={curso.NOMBRE} ptj ={curso.PORCENTAJE}/>
+      ))}
     </div>
+    
     <div className="d-flex justify-content-between mt-5">
       <div>
         <h1 className="font-weight-normal">My communities</h1>

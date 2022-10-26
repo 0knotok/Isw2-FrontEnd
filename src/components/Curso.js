@@ -8,7 +8,7 @@ export default function Curso(props) {
 
       <h5 className="card-title text-center mb-5 mt-3">{props.nombre}</h5>
       <div className="progress">
-        <div className="progress-bar" style={{width: `${props.ptj}`}} role="progressbar" aria-valuenow={25} aria-valuemin={0} aria-valuemax={100}>{props.ptj}</div>
+        <div className="progress-bar" style={{width: `${props.ptj}`}} role="progressbar" aria-valuenow={25} aria-valuemin={0} aria-valuemax={100}>{props.ptj}%</div>
       </div>
       <div className="mt-4 mb-2 d-flex justify-content-between">
         <a href="#" className="btn btn-light" style={{width: '48%'}}>See summary</a>
