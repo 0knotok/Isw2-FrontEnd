@@ -36,6 +36,7 @@ export default function SubirArchivo(){
     reader.readAsDataURL(files[0]);
     reader.onload = (e) => {
       const pdf = e.target.result;
+      console.log(pdf);
       setFile(pdf);
     }
   }

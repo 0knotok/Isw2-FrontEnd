@@ -22,8 +22,8 @@ const Curso = () => {
     }).then(function (response) {
       if (response.statusText === "OK") {
         // Enviar cursos
-        setMaterial(response.data.rows);
-        console.log(response.data.rows)
+        setMaterial(response.data);
+        console.log(response.data)
       }
     })
       .catch(function (error) {
@@ -64,7 +64,8 @@ const Curso = () => {
                 </div>
                 <div className="col">
                         <h1>Documento:</h1>
-                        <iframe height="170%" width="100%" src={document}>
+                        <p>{material.LINK}</p>
+                        <iframe height="170%" width="100%" src={'data:application/pdf;base64,'+material.MATERIAL}>
                         </iframe>
                 </div>
             </div>
