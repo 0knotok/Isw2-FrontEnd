@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import FactoryPregunta from "../components/ObjetosExamen/FactoryPregunta";
 import Navbar from '../components/Navbar';
+import { useNavigate } from 'react-router-dom';
 
 const ExamenCreado = [];
 
 function CrearExamen(){
     //Pregunta
-    const [SubirPregunta, setPregunta] = useState("");
+    const [Pregunta, setPregunta] = useState("");
 
     //Opciones posibles
     const [OpcionUno, setUno] = useState("");
@@ -71,22 +72,22 @@ function CrearExamen(){
     //Objetos para sobrescribir e ingresar al Array
     const Examen = new FactoryPregunta;
 
-    const Pregunta = Examen.crearPregunta('Opcion Unica');
-    const PreguntaUnicaDos = Pregunta.crearUnica(2);
-    const PreguntaUnicaTres = Pregunta.crearUnica(3);
-    const PreguntaUnicaCuatro = Pregunta.crearUnica(4);
-    const PreguntaUnicaCinco = Pregunta.crearUnica(5);
+    const TipoPregunta1 = Examen.crearPregunta('Opcion Unica');
+    const PreguntaUnicaDos = TipoPregunta1.crearUnica(2);
+    const PreguntaUnicaTres = TipoPregunta1.crearUnica(3);
+    const PreguntaUnicaCuatro = TipoPregunta1.crearUnica(4);
+    const PreguntaUnicaCinco = TipoPregunta1.crearUnica(5);
 
-    const Pregunta2 = Examen.crearPregunta('Opcion Multiple');
-    const PreguntaMultipleCuatro = Pregunta2.crearMultiple(4);
-    const PreguntaMultipleCinco = Pregunta2.crearMultiple(5);
-    const PreguntaMultipleSeis = Pregunta2.crearMultiple(6);
-    const PreguntaMultipleSiete = Pregunta2.crearMultiple(7);
+    const TipoPregunta2 = Examen.crearPregunta('Opcion Multiple');
+    const PreguntaMultipleCuatro = TipoPregunta2.crearMultiple(4);
+    const PreguntaMultipleCinco = TipoPregunta2.crearMultiple(5);
+    const PreguntaMultipleSeis = TipoPregunta2.crearMultiple(6);
+    const PreguntaMultipleSiete = TipoPregunta2.crearMultiple(7);
 
     //Sobrescribir objetos segun tipo
     const SubirDos = () => {
         if (Tipo == 1){
-            PreguntaUnicaDos.setpregunta = SubirPregunta;
+            PreguntaUnicaDos.setpregunta = Pregunta;
             PreguntaUnicaDos.setopcion1 = OpcionUno;
             PreguntaUnicaDos.setopcion2 = OpcionDos;
             setMostrar(current => !current);
@@ -98,7 +99,7 @@ function CrearExamen(){
     }
     const SubirTres = () => {
         if (Tipo == 1){
-            PreguntaUnicaTres.setpregunta = SubirPregunta;
+            PreguntaUnicaTres.setpregunta = Pregunta;
             PreguntaUnicaTres.setopcion1 = OpcionUno;
             PreguntaUnicaTres.setopcion2 = OpcionDos;
             PreguntaUnicaTres.setopcion3 = OpcionTres;
@@ -111,7 +112,7 @@ function CrearExamen(){
     }
     const SubirCuatro = () => {
         if (Tipo == 1){
-            PreguntaUnicaCuatro.setpregunta = SubirPregunta;
+            PreguntaUnicaCuatro.setpregunta = Pregunta;
             PreguntaUnicaCuatro.setopcion1 = OpcionUno;
             PreguntaUnicaCuatro.setopcion2 = OpcionDos;
             PreguntaUnicaCuatro.setopcion3 = OpcionTres;
@@ -123,7 +124,7 @@ function CrearExamen(){
             setNumero(Numero + 1);
         }
         if (Tipo == 2){
-            PreguntaMultipleCuatro.setpregunta = SubirPregunta;
+            PreguntaMultipleCuatro.setpregunta = Pregunta;
             PreguntaMultipleCuatro.setopcion1 = OpcionUno;
             PreguntaMultipleCuatro.setopcion2 = OpcionDos;
             PreguntaMultipleCuatro.setopcion3 = OpcionTres;
@@ -137,7 +138,7 @@ function CrearExamen(){
     }
     const SubirCinco = () => {
         if (Tipo == 1){
-            PreguntaUnicaCinco.setpregunta = SubirPregunta;
+            PreguntaUnicaCinco.setpregunta = Pregunta;
             PreguntaUnicaCinco.setopcion1 = OpcionUno;
             PreguntaUnicaCinco.setopcion2 = OpcionDos;
             PreguntaUnicaCinco.setopcion3 = OpcionTres;
@@ -150,7 +151,7 @@ function CrearExamen(){
             setNumero(Numero + 1);
         }
         if (Tipo == 2){
-            PreguntaMultipleCinco.setpregunta = SubirPregunta;
+            PreguntaMultipleCinco.setpregunta = Pregunta;
             PreguntaMultipleCinco.setopcion1 = OpcionUno;
             PreguntaMultipleCinco.setopcion2 = OpcionDos;
             PreguntaMultipleCinco.setopcion3 = OpcionTres;
@@ -165,7 +166,7 @@ function CrearExamen(){
     }
     const SubirSeis = () => {
         if (Tipo == 2){
-            PreguntaMultipleSeis.setpregunta = SubirPregunta;
+            PreguntaMultipleSeis.setpregunta = Pregunta;
             PreguntaMultipleSeis.setopcion1 = OpcionUno;
             PreguntaMultipleSeis.setopcion2 = OpcionDos;
             PreguntaMultipleSeis.setopcion3 = OpcionTres;
@@ -181,7 +182,7 @@ function CrearExamen(){
     }
     const SubirSiete = () => {
         if (Tipo == 2){
-            PreguntaMultipleSiete.setpregunta = SubirPregunta;
+            PreguntaMultipleSiete.setpregunta = Pregunta;
             PreguntaMultipleSiete.setopcion1 = OpcionUno;
             PreguntaMultipleSiete.setopcion2 = OpcionDos;
             PreguntaMultipleSiete.setopcion3 = OpcionTres;
@@ -218,16 +219,16 @@ function CrearExamen(){
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
-                    <button className="mt-4 btn btn-primary" type="submit" onClick={SubirDos}>Subir Pregunta</button>
                     <div>
                         <div>    
                             <br></br>
                             <h5>Vista Previa:</h5>
-                            <span>Pregunta: {SubirPregunta}</span><br></br>       
+                            <span>Pregunta: {Pregunta}</span><br></br>       
                             <span>Opcion Uno: {OpcionUno}</span><br></br>
                             <span>Opcion Dos: {OpcionDos}</span><br></br>
                         </div>
                     </div>
+                    <button className="mt-4 btn btn-primary" type="submit" onClick={SubirDos}>Subir Pregunta</button>
                 </div>
             )
         }
@@ -255,17 +256,17 @@ function CrearExamen(){
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
-                    <button className="mt-4 btn btn-primary" type="submit" onClick={SubirTres}>Subir Pregunta</button>
                     <div>
                         <div>    
                             <br></br>
                             <h5>Vista Previa:</h5>
-                            <span>Pregunta: {SubirPregunta}</span><br></br>       
+                            <span>Pregunta: {Pregunta}</span><br></br>       
                             <span>Opcion Uno: {OpcionUno}</span><br></br>
                             <span>Opcion Dos: {OpcionDos}</span><br></br>
                             <span>Opcion Tres: {OpcionTres}</span><br></br>
                         </div>
                     </div>
+                    <button className="mt-4 btn btn-primary" type="submit" onClick={SubirTres}>Subir Pregunta</button>
                 </div>
             )
         }
@@ -298,18 +299,18 @@ function CrearExamen(){
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
-                    <button className="mt-4 btn btn-primary" type="submit" onClick={SubirCuatro}>Subir Pregunta</button>
                     <div>
                         <div>    
                             <br></br>
                             <h5>Vista Previa:</h5>
-                            <span>Pregunta: {SubirPregunta}</span><br></br>       
+                            <span>Pregunta: {Pregunta}</span><br></br>       
                             <span>Opcion Uno: {OpcionUno}</span><br></br>
                             <span>Opcion Dos: {OpcionDos}</span><br></br>
                             <span>Opcion Tres: {OpcionTres}</span><br></br>
                             <span>Opcion Cuatro: {OpcionCuatro}</span><br></br>
                         </div>
                     </div>
+                    <button className="mt-4 btn btn-primary" type="submit" onClick={SubirCuatro}>Subir Pregunta</button>
                 </div>
             )
         }
@@ -347,12 +348,11 @@ function CrearExamen(){
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
-                    <button className="mt-4 btn btn-primary" type="submit" onClick={SubirCinco}>Subir Pregunta</button>
                     <div>
                         <div>    
                             <br></br>
                             <h5>Vista Previa:</h5>
-                            <span>Pregunta: {SubirPregunta}</span><br></br>       
+                            <span>Pregunta: {Pregunta}</span><br></br>       
                             <span>Opcion Uno: {OpcionUno}</span><br></br>
                             <span>Opcion Dos: {OpcionDos}</span><br></br>
                             <span>Opcion Tres: {OpcionTres}</span><br></br>
@@ -360,6 +360,7 @@ function CrearExamen(){
                             <span>Opcion Cinco: {OpcionCinco}</span><br></br>
                         </div>
                     </div>
+                    <button className="mt-4 btn btn-primary" type="submit" onClick={SubirCinco}>Subir Pregunta</button>
                 </div>
             )
         }
@@ -402,12 +403,11 @@ function CrearExamen(){
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
-                    <button className="mt-4 btn btn-primary" type="submit" onClick={SubirSeis}>Subir Pregunta</button>
                     <div>
                         <div>    
                             <br></br>
                             <h5>Vista Previa:</h5>
-                            <span>Pregunta: {SubirPregunta}</span><br></br>       
+                            <span>Pregunta: {Pregunta}</span><br></br>       
                             <span>Opcion Uno: {OpcionUno}</span><br></br>
                             <span>Opcion Dos: {OpcionDos}</span><br></br>
                             <span>Opcion Tres: {OpcionTres}</span><br></br>
@@ -416,6 +416,7 @@ function CrearExamen(){
                             <span>Opcion Seis: {OpcionSeis}</span><br></br>
                         </div>
                     </div>
+                    <button className="mt-4 btn btn-primary" type="submit" onClick={SubirSeis}>Subir Pregunta</button>
                 </div>
             )
         }
@@ -463,12 +464,11 @@ function CrearExamen(){
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
-                    <button className="mt-4 btn btn-primary" type="submit" onClick={SubirSiete}>Subir Pregunta</button>
                     <div>
                         <div>    
                             <br></br>
                             <h5>Vista Previa:</h5>
-                            <span>Pregunta: {SubirPregunta}</span><br></br>       
+                            <span>Pregunta: {Pregunta}</span><br></br>       
                             <span>Opcion Uno: {OpcionUno}</span><br></br>
                             <span>Opcion Dos: {OpcionDos}</span><br></br>
                             <span>Opcion Tres: {OpcionTres}</span><br></br>
@@ -478,6 +478,7 @@ function CrearExamen(){
                             <span>Opcion Siete: {OpcionSiete}</span><br></br>
                         </div>
                     </div>
+                    <button className="mt-4 btn btn-primary" type="submit" onClick={SubirSiete}>Subir Pregunta</button>
                 </div>
             )
         }
@@ -525,8 +526,14 @@ function CrearExamen(){
         setTipo(2);
     };
 
+    //Pasar Examen Creado a /Examen
+    const Navigate = useNavigate();
+    const PasarExamen = () => {
+        Navigate('/examen',{state:ExamenCreado});
+    }
+
     //Render
-    return (       
+    return (
         <div className="d-flex justify-content-center">
             <div className="w-75 p-3">
               <body>
@@ -546,6 +553,9 @@ function CrearExamen(){
                             {Mostrar && LeerOpciones(Opciones)}
                         </div>
                         <br></br>
+                        <div>
+                            <a className="btn btn-secondary" onClick={()=>{PasarExamen()}}>Publicar Examen</a>
+                        </div>
                     </div>
                 </div>
               </body>
@@ -555,3 +565,4 @@ function CrearExamen(){
 }
 
 export default CrearExamen;
+

@@ -8,6 +8,7 @@ class MultipleCuatro extends Pregunta {
         this._opcion3 = 'Opcion 3';
         this._opcion4 = 'Opcion 4';
         this._respuesta = [0,0,0,0];
+        this._revision = [0,0,0,0];
     }
 
     get getopcion1(){
@@ -77,6 +78,7 @@ class MultipleCinco extends Pregunta {
         this._opcion4 = 'Opcion 4';
         this._opcion5 = 'Opcion 5';
         this._respuesta = [0,0,0,0,0];
+        this._revision = [0,0,0,0,0];
     }
 
     get getopcion1(){
@@ -158,6 +160,7 @@ class MultipleSeis extends Pregunta {
         this._opcion5 = 'Opcion 5';
         this._opcion6 = 'Opcion 6';
         this._respuesta = [0,0,0,0,0,0];
+        this._revision = [0,0,0,0,0,0];
     }
 
     get getopcion1(){
@@ -251,6 +254,7 @@ class MultipleSiete extends Pregunta {
         this._opcion6 = 'Opcion 6';
         this._opcion7 = 'Opcion 7';
         this._respuesta = [0,0,0,0,0,0,0];
+        this._revision = [0,0,0,0,0,0,0];
     }
 
     get getopcion1(){

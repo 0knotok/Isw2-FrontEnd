@@ -6,6 +6,7 @@ class UnicaDos extends Pregunta {
         this._opcion1 = 'Opcion 1';
         this._opcion2 = 'Opcion 2';
         this._respuesta = '';
+        this._revision = '';
     }
 
     get getopcion1(){
@@ -51,6 +52,7 @@ class UnicaTres extends Pregunta {
         this._opcion2 = 'Opcion 2';
         this._opcion3 = 'Opcion 3';
         this._respuesta = '';
+        this._revision = '';
     }
 
     get getopcion1(){
@@ -107,6 +109,7 @@ class UnicaCuatro extends Pregunta {
         this._opcion3 = 'Opcion 3';
         this._opcion4 = 'Opcion 4';
         this._respuesta = '';
+        this._revision = '';
     }
 
     get getopcion1(){
@@ -176,6 +179,7 @@ class UnicaCinco extends Pregunta {
         this._opcion4 = 'Opcion 4';
         this._opcion5 = 'Opcion 5';
         this._respuesta = '';
+        this._revision = '';
     }
 
     get getopcion1(){
