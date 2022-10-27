@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';  
 import Axios from "axios";
 import Cookies from "universal-cookie";
 
-export default function LogIn(){
-
+export default function LogIn(props){
+  const cookies = new Cookies();
+  
     const[formData, setFormData] = useState(
         {
           email: "",
@@ -39,14 +41,21 @@ export default function LogIn(){
             cookies.set('numero_celular',response.data.NUMERO_CELULAR,{path:'/'});
             cookies.set('password',response.data.PASSWORD,{path:'/'});
             cookies.set('primer_nom',response.data.PRIMER_NOM,{path:'/'});
-            cookies.set('tipo_usuario',response.data.TIPO_USUARIO,{path:'/'});
-            window.location.href="./portal";
+            cookies.set('tipo_usuario',response.data.TIPO_USUARIO===0?"administrator":response.data.TIPO_USUARIO===1?"teacher":"student",{path:'/'});
+            let tipo_user = cookies.get('tipo_usuario');
+            if (tipo_user === "student"){
+              window.location.href="./PortalAlumno";
+            }else if (tipo_user ==="teacher"){
+              window.location.href="./PortalProfesor";
+            }else if (tipo_user ==="administrator"){
+              window.location.href="./PortalAdministrador";
+            }
           }
         })
         .catch(function (error) {
           console.log(error);
+          alert("Credenciales incorrectas");
         });
-        console.log(formData);
       }
 
     return(
@@ -54,23 +63,38 @@ export default function LogIn(){
             <div className='row my-5'></div>
             <div className='row my-5'></div>
             <div className='row my-5'></div>
-            <div className='row my-5' >
-                <div className='col-4 '></div>
-                <div className='col-4  text-center px-5' >
+            <div className='row my-5 '  >
+                <div className='col '></div>
+                <div className='col  text-center px-5 border border-dark p-4 rounded' >
                     <form onSubmit={handleSubmit} method="post">
                         <h1 className='text-center mb-5'>LOGIN</h1>
                         <label>Ingrese su correo electrónico:</label>
                         <div className="input-group my-3">                        
                             <input type="text" name="email" className="form-control mx-2 my-2" onChange={handleChangeInput} placeholder='E-mail' required></input>
                         </div>
-                        <label>Ingrese su contraseña:</label>                        
-                        <div className="input-group mb-3 my-3 mb-5">
+                        <label className="mb-3" >Ingrese su contraseña:</label>                        
+                        <div className="input-group">
                             <input type="password" name="password" className="form-control mx-2 my-2" onChange={handleChangeInput} placeholder='Contraseña' required></input>
                         </div>
-                        <button type="submit" onSubmit={handleSubmit} method="post" className="btn btn-primary ml-2 align-items-center"> Ingresar</button>
-                    </form>
+                        <div className = "input-group mb-5">
+                        <Link className="nav-link" to='/recuperar'><button type="button" className="btn btn-link">Olvidé mi contraseña</button></Link>
+                        </div>
+                        <button type="submit" onSubmit={handleSubmit} method="post" className="btn btn-primary ml-2 align-items-center"> Ingresar</button>    
+                    </form>    
+                    
+                    <div className="row my-2 mx-3 p-4">
+                      <div className="row px-5 mx-5 py-3">
+                        Registrarse como
+                      </div>
+                      <div className="col">
+                        <Link className="nav-link" to='/signUpP'><button type="button" className="btn btn-primary">Profesor</button></Link>
+                      </div>
+                      <div className="col">
+                        <Link className="nav-link" to='signUpA'><button className="btn btn-primary">Alumno</button></Link>
+                      </div>
+                    </div>
                 </div>
-                <div className='col-4  pd-2'></div>
+                <div className='col '> </div>
             </div>
         </div>
     )

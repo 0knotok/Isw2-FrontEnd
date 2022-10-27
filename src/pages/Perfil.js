@@ -60,15 +60,15 @@ const Perfil = () => {
             <div className="row my-4">
               <div className="col-md-8 offset-md-2">
                 <ul className="nav nav-tabs" id="myTab" role="tablist">
-                  <li className="nav-item" role="presentation">
+                    <li className="nav-item" role="presentation">
                     <button className="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
-                     type="button" role="tab" aria-controls="home" aria-selected="true">Datos del Usuario</button>
+                     type="button" role="tab" aria-controls="home" aria-selected="true">User Information</button>
                   </li>
-                            <li className="nav-item" role="presentation">
-                                <button className="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
-                                    type="button" role="tab" aria-controls="profile" aria-selected="false">Actualizar Datos</button>
-                            </li>
-                        </ul>
+                <li className="nav-item" role="presentation">
+                    <button className="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                     type="button" role="tab" aria-controls="profile" aria-selected="false">Upload Data</button>
+                </li>
+                </ul>
                         <div className="tab-content" id="myTabContent">
                           <br/>
                               <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -78,41 +78,41 @@ const Perfil = () => {
                                       </div>
                                       <div className="col-8">
                                           <div className="form-group row mb-2">
-                                              <label for="codigo" className="col-4">Primer Nombre</label>
+                                              <label for="codigo" className="col-4">First name:</label>
                                               <div className="col-8">
                                                   <input type="text" className="form-control" value={cookies.get('primer_nom')} readOnly/>
                                               </div>                                            </div>
                                            <div className="form-group row mb-2">
-                                              <label for="codigo" className="col-4">Apellido Paterno</label>
+                                              <label for="codigo" className="col-4">Paternal surname:</label>
                                               <div className="col-8">
                                                   <input type="text" className="form-control" value={cookies.get('ap_pat')} readOnly/>
                                               </div>
                                           </div>
                                           <div className="form-group row mb-2">
-                                              <label for="codigo" className="col-4">Apellido Materno</label>
+                                              <label for="codigo" className="col-4">Mother's last name:</label>
                                               <div className="col-8">
                                                   <input type="text" className="form-control" value={cookies.get('ap_mat')} onChange={handleChangeInput} readOnly/>
                                               </div>
                                           </div>
                                           <div className="form-group row mb-2">
-                                              <label for="codigo" className="col-4">Nombre de Usuario</label>
+                                              <label for="codigo" className="col-4">Username:</label>
                                               <div className="col-8">
                                                   <input type="text" className="form-control" value={cookies.get('nom_usuario')} onChange={handleChangeInput} readOnly/>
                                               </div>
                                           </div>
                                           <div className="form-group row mb-2">
-                                              <label for="codigo" className="col-4">E-Mail</label>
+                                              <label for="codigo" className="col-4">E-Mail:</label>
                                               <div className="col-8">
                                                   <input type="email" className="form-control" value={cookies.get('e_mail')} onChange={handleChangeInput} readOnly/>                                                </div>
                                             </div>
                                             <div className="form-group row mb-2">
-                                               <label for="codigo" className="col-4">Número de Teléfono</label>
+                                               <label for="codigo" className="col-4">Telephone number:</label>
                                               <div className="col-8">
                                                  <input type="number" className="form-control" value={cookies.get('numero_celular')} onChange={handleChangeInput} readOnly/>
                                               </div>
                                            </div>
                                             <div className="form-group row">
-                                                <label for="codigo" className="col-4">DNI</label>
+                                                <label for="codigo" className="col-4">DNI:</label>
                                                 <div className="col-8">
                                                     <input type="text" className="form-control" value={cookies.get('doc_id')} onChange={handleChangeInput} readOnly/>
                                                 </div>
@@ -122,35 +122,35 @@ const Perfil = () => {
                                 </div>
                                 <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                     <div className="col-md-10 offset-md-1 ">
-                                        <h3 className="text-center">Modificación de los Datos</h3>
+                                        <h3 className="text-center">Modify your data:</h3>
                                         <form form onSubmit={handleSubmit} method="post">
                                         <div className="form-group row mb-2">
-                                            <label for="Usuario" className="col-4">Nombre de Usuario</label>
+                                            <label for="Usuario" className="col-4">Username:</label>
                                             <div className="col-8">
                                                 <input type="text" name='username' className="form-control" value={cookies.get('nom_usuario')}/>
                                             </div>
                                         </div>
                                         <div className="form-group row  mb-2">
-                                            <label for="Usuario" className="col-4">Contraseña</label>
+                                            <label for="Usuario" className="col-4">Password:</label>
                                             <div className="col-8">
-                                                <input type="text" name='password' className="form-control" value={cookies.get('password')}/>
+                                                <input type="password" name='password' className="form-control" value={cookies.get('password')}/>
                                             </div>
                                         </div>
                                         <div className="form-group row  mb-2">
-                                            <label for="Usuario" className="col-4">E-Mail</label>
+                                            <label for="Usuario" className="col-4">E-Mail:</label>
                                             <div className="col-8">
                                                 <input type="text" name='email' className="form-control" value={cookies.get('e_mail')}/>
                                             </div>
                                         </div>
                                         <div className="form-group row  mb-2">
-                                            <label for="Usuario" className="col-4">Número de Teléfono</label>
+                                            <label for="Usuario" className="col-4">Telephone number:</label>
                                             <div className="col-8">
                                                 <input type="text" name='telefono' className="form-control" value={cookies.get('numero_celular')}/>
                                             </div>
                                         </div>
                                         <br/>
                                             <div className="form-group text-center">
-                                                <button form onSubmit={handleSubmit} method="post" type='submit' className="btn btn-info">Actualizar</button>
+                                                <button form onSubmit={handleSubmit} method="post" type='submit' className="btn btn-info">Upload</button>
                                             </div>
                                         </form>
                                     </div>

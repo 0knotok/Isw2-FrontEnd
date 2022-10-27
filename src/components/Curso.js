@@ -21,3 +21,5 @@ export default function Curso(props) {
   </div>
   )
 }
+
+

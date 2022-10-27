@@ -204,18 +204,18 @@ function CrearExamen(){
             return(
                 <div className="mt-2" id="crearpregunta">
                     <form onSubmit={P}>
-                        <label for="pre">Introduce la Pregunta:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="pre">Introduzca la Pregunta:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="pre" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <br></br>
                     <form onSubmit={O1}>
-                        <label for="opc1">Introduce la Opción #1:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #1:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <form onSubmit={O2}>
-                        <label for="opc1">Introduce la Opción #2:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #2:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
@@ -236,23 +236,23 @@ function CrearExamen(){
             return(
                 <div className="mt-2" id="crearpregunta">
                     <form onSubmit={P}>
-                        <label for="pre">Introduce la Pregunta:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="pre">Introduzca la Pregunta:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="pre" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <br></br>
                     <form onSubmit={O1}>
-                        <label for="opc1">Introduce la Opción #1:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #1:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <form onSubmit={O2}>
-                        <label for="opc1">Introduce la Opción #2:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #2:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <form onSubmit={O3}>
-                        <label for="opc1">Introduce la Opción #3:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #3:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
@@ -274,28 +274,28 @@ function CrearExamen(){
             return(
                 <div className="mt-2" id="crearpregunta">
                     <form onSubmit={P}>
-                        <label for="pre">Introduce la Pregunta:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="pre">Introduzca la Pregunta:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="pre" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <br></br>
                     <form onSubmit={O1}>
-                        <label for="opc1">Introduce la Opción #1:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #1:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <form onSubmit={O2}>
-                        <label for="opc1">Introduce la Opción #2:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #2:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <form onSubmit={O3}>
-                        <label for="opc1">Introduce la Opción #3:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #3:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <form onSubmit={O4}>
-                        <label for="opc1">Introduce la Opción #4:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #4:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
@@ -318,33 +318,33 @@ function CrearExamen(){
             return(
                 <div className="mt-2" id="crearpregunta">
                     <form onSubmit={P}>
-                        <label for="pre">Introduce la Pregunta:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="pre">Introduzca la Pregunta:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="pre" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <br></br>
                     <form onSubmit={O1}>
-                        <label for="opc1">Introduce la Opción #1:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #1:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <form onSubmit={O2}>
-                        <label for="opc1">Introduce la Opción #2:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #2:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <form onSubmit={O3}>
-                        <label for="opc1">Introduce la Opción #3:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #3:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <form onSubmit={O4}>
-                        <label for="opc1">Introduce la Opción #4:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #4:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <form onSubmit={O5}>
-                        <label for="opc1">Introduce la Opción #5:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #5:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
@@ -368,38 +368,38 @@ function CrearExamen(){
             return(
                 <div className="mt-2" id="crearpregunta">
                     <form onSubmit={P}>
-                        <label for="pre">Introduce la Pregunta:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="pre">Introduzca la Pregunta:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="pre" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <br></br>
                     <form onSubmit={O1}>
-                        <label for="opc1">Introduce la Opción #1:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #1:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <form onSubmit={O2}>
-                        <label for="opc1">Introduce la Opción #2:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #2:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <form onSubmit={O3}>
-                        <label for="opc1">Introduce la Opción #3:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #3:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <form onSubmit={O4}>
-                        <label for="opc1">Introduce la Opción #4:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #4:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <form onSubmit={O5}>
-                        <label for="opc1">Introduce la Opción #5:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #5:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <form onSubmit={O6}>
-                        <label for="opc1">Introduce la Opción #6:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #6:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
@@ -424,43 +424,43 @@ function CrearExamen(){
             return(
                 <div className="mt-2" id="crearpregunta">
                     <form onSubmit={P}>
-                        <label for="pre">Introduce la Pregunta:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="pre">Introduzca la Pregunta:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="pre" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <br></br>
                     <form onSubmit={O1}>
-                        <label for="opc1">Introduce la Opción #1:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #1:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <form onSubmit={O2}>
-                        <label for="opc1">Introduce la Opción #2:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #2:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <form onSubmit={O3}>
-                        <label for="opc1">Introduce la Opción #3:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #3:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <form onSubmit={O4}>
-                        <label for="opc1">Introduce la Opción #4:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #4:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <form onSubmit={O5}>
-                        <label for="opc1">Introduce la Opción #5:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #5:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <form onSubmit={O6}>
-                        <label for="opc1">Introduce la Opción #6:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #6:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
                     <form onSubmit={O7}>
-                        <label for="opc1">Introduce la Opción #7:</label><span>&nbsp;&nbsp;&nbsp;</span>
+                        <label for="opc1">Introduzca la Opción #7:</label><span>&nbsp;&nbsp;&nbsp;</span>
                         <input className="mt-1" id="opc1" type="text"></input><span>&nbsp;&nbsp;&nbsp;</span>
                         <button className="mb-1 btn-primary" type="submit">Subir</button>
                     </form>
@@ -482,8 +482,14 @@ function CrearExamen(){
                 </div>
             )
         }
+        else if (n==0){
+            window.alert('Error: No pueden no haber opciones')
+        } 
+        else if (n==1){
+            window.alert('Error: No se puede ingresar una única opción de respuesta')
+        } 
         else {
-            console.log('Error: No se pueden ingresar dichas opciones')
+            window.alert('Error: No se pueden ingresar dichas opciones')
         }
     }
 
@@ -510,7 +516,7 @@ function CrearExamen(){
                     </form>
                 </div>
             )
-        }
+        }       
         else {
             console.log("Error: No existe dicho tipo")
         }
