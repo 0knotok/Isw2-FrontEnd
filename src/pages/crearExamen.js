@@ -491,7 +491,10 @@ function CrearExamen(){
                 text: 'Se ha ingresado un valor incorrecto',
                 icon: 'error',
                 confirmButtonText: 'OK'
-              })
+              }).then((result) => {
+                // Reload the Page
+                window.location.reload();
+              });
               
         }
     }
@@ -528,7 +531,10 @@ function CrearExamen(){
                 text: 'Se ha ingresado un valor incorrecto',
                 icon: 'error',
                 confirmButtonText: 'OK' 
-              })
+              }).then((result) => {
+                // Reload the Page
+                window.location.reload();
+              });
               
         }
     }
