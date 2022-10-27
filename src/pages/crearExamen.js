@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import FactoryPregunta from "../components/ObjetosExamen/FactoryPregunta";
 import Navbar from '../components/Navbar';
 import { useNavigate } from 'react-router-dom';
+import Swal from "sweetalert2";
 
 const ExamenCreado = [];
 
@@ -484,6 +485,14 @@ function CrearExamen(){
         }
         else {
             console.log('Error: No se pueden ingresar dichas opciones')
+           // alert("Valores incorrectos")
+            Swal.fire({
+                title: 'Error',
+                text: 'Se ha ingresado un valor incorrecto',
+                icon: 'error',
+                confirmButtonText: 'OK'
+              })
+              
         }
     }
 
@@ -513,6 +522,14 @@ function CrearExamen(){
         }
         else {
             console.log("Error: No existe dicho tipo")
+            //alert("Valores incorrectos")
+            Swal.fire({
+                title: 'Error',
+                text: 'Se ha ingresado un valor incorrecto',
+                icon: 'error',
+                confirmButtonText: 'OK' 
+              })
+              
         }
     }
 
