@@ -68,7 +68,7 @@ const Curso = () => {
             </iframe>
             <div className="row">
               <Link to='/PortalAlumno'>
-                <button type="button" className="btn btn-danger">Volver</button>
+                <button type="button" className="btn btn-danger">Return</button>
               </Link>
             </div>
           </div>
