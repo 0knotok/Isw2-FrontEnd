@@ -51,16 +51,16 @@ export default function Portal() {
         </div>
         <div className="mt-4">
           <div className='container'>
-            <h1>Reuniones</h1>
+            <h1>Meetings</h1>
           </div>
           <Zoom />
         </div>
         <div className='d-flex mt-6 justify-content-between'>
           <div className='container'>
-            <h1>Crear Evaluación</h1>
+            <h1>Create Evaluation</h1>
             <br></br>
             <Link to='/CreacionFormulario' className="navbar-brand">
-              <button className='btn btn-primary'>Creación de Formulario</button>
+              <button className='btn btn-primary'>Creation of forms</button>
             </Link>
           </div>
         </div>
