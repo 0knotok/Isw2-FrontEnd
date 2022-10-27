@@ -9,8 +9,8 @@ function ForoPagina(){
           <Navbar/>
           <div className="card mt-4" id="foro">
             <div className="card-body">
-              <h3>Foro 1: Gramática</h3><br></br>
-              <h6>Crea una Consulta para Preguntar:</h6><br></br>
+              <h3>Forum 1: Gramaticc</h3><br></br>
+              <h6>Create a thread and start making questions:</h6><br></br>
               <div>
                 <CrearConsulta />
               </div>

@@ -29,9 +29,9 @@ function ConsultaForo(){
           <div>
             <div className="mt-2" id="respuesta">
               <form onSubmit={R}>
-                <label for="txtresp">Responde a una pregunta:</label><br></br>
+                <label for="txtresp">Answer a question</label><br></br>
                 <input className="mt-3 form-control" id="txtresp" type="text"></input><br></br>
-                <button className="mb-3 btn btn-primary" type="submit">Responder</button>
+                <button className="mb-3 btn btn-primary" type="submit">Your answer</button>
               </form>
             </div>
           </div>
@@ -43,9 +43,9 @@ function ConsultaForo(){
           <div>
             <div className="mt-2" id="pregunta">
               <form onSubmit={P}>
-                <label for="txtpreg">Ingresa una pregunta:</label><br></br>
+                <label for="txtpreg">Make a question:</label><br></br>
                 <input className="mt-3 form-control" id="txtpreg" type="text"></input><br></br>
-                <button className="mb-3 btn btn-primary" type="submit">Preguntar</button>
+                <button className="mb-3 btn btn-primary" type="submit">Send question</button>
               </form>
             </div>
           </div>
@@ -88,12 +88,12 @@ function ConsultaForo(){
     return (
         <div class="container border mb-3">
             <div className="mt-3">
-                <p>Pregunta: {CrearConsultaPendiente()}</p>
+                <p>Question: {CrearConsultaPendiente()}</p>
             </div>
             <div className="mt-2">
-                <p>Respuesta: {CrearConsultaResuelta()}</p>
+                <p>Answer: {CrearConsultaResuelta()}</p>
             </div>
-            <button className="mb-3 btn btn-primary" onClick={handleClick}>Consulta</button>
+            <button className="mb-3 btn btn-primary" onClick={handleClick}>Make a question</button>
             {isShown && <Preguntar />}
         </div>
     )
