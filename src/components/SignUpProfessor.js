@@ -48,25 +48,26 @@ export default function SignUpProfessor() {
                         <input type="password" className="form-control mx-2" placeholder="Repeat your password" />
                     </div>
                     <h2 className="mt-4">Certificates</h2>
-                    {'{'}listaCertf .map((certf, index) =&gt;(
-                    <div key="{index}" className="input-group my-3">
-                        <input type="text" className="form-control mx-2" placeholder="Certificates" />
-                        <input type="text" className="form-control mx-2" placeholder="URL" />
-                        <input type="date" className="form-control" />
-                        {'{'}listaCertf.length - 1 === index &amp;&amp; listaCertf.length &lt; 5 &amp;&amp;
-                        (
-                        <button className="btn btn-primary mx-1" onclick="{handlelistaCertf}">
-                            <span>+</span>
-                        </button>
-                        ){'}'}
-                        {'{'}listaCertf.length &gt; 1&amp;&amp;
-                        (
-                        <button className="btn btn-primary mx-1" onclick="{()="> handlelistaCertfRem(index){'}'}&gt;
+                    {listaCertf .map((certf, index) =>(
+                            <div key={index} className="input-group my-3">
+                            <input type="text" className="form-control mx-2" placeholder='Certificate'></input>
+                            <input type="text" className="form-control mx-2" placeholder='URL'></input>
+                            <input type="date" className="form-control"></input>
+                            {listaCertf.length - 1 === index && listaCertf.length < 5 && 
+                            ( 
+                               <button class="btn btn-primary mx-1" onClick={handlelistaCertf}>
+                                  <span>+</span>
+                                </button>
+                            )} 
+                        {listaCertf.length > 1&&
+                            (
+                            <button class="btn btn-primary mx-1" onClick={()=> handlelistaCertfRem(index)}>
                             <span>-</span>
-                        </button>
-                        ){'}'}
-                    </div>
-                    )){'}'}
+                            </button>
+                        )}
+
+                        </div>
+                        ))}
                     <div className="row">
                         <div className="col-4 mx-2" />
                         <div className="col-2 mx-4">
