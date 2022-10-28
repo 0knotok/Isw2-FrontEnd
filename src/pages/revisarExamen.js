@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
 var ExamenCreado = [];
@@ -62,7 +61,7 @@ function RevisarExamen(){
     function BotonIniciar(){
         return (
             <div>
-                <button className="mt-2 mb-2 btn btn-primary" onClick={IniciarExamen}>Iniciar Revision</button>
+                <button className="mt-2 mb-2 btn btn-primary" onClick={IniciarExamen}>Start Review</button>
             </div>
         )
     }
@@ -70,7 +69,7 @@ function RevisarExamen(){
     function BotonSiguiente(){
         return (
             <div>
-                <button className="mt-2 mb-2 btn btn-primary" onClick={PasarSiguiente}>Siguiente Pregunta</button>
+                <button className="mt-2 mb-2 btn btn-primary" onClick={PasarSiguiente}>Next Question</button>
             </div>
         )
     }
@@ -78,7 +77,7 @@ function RevisarExamen(){
     function BotonFinalizar(){
         return (
             <div>
-                <a className="mt-2 mb-2 btn btn-secondary" onClick={FinalizarExamen}>Finalizar Revision</a>
+                <a className="mt-2 mb-2 btn btn-secondary" onClick={FinalizarExamen}>Finish Review</a>
             </div>
         )
     }
@@ -114,10 +113,10 @@ function RevisarExamen(){
 
     function SubirRespuestaUnica(O){
         if (O == 'option1'){
-            setRespuestaUnica('Correcto');
+            setRespuestaUnica('Correct');
         }
         if (O == 'option2'){
-            setRespuestaUnica('Incorrecto');
+            setRespuestaUnica('Incorrect');
         }
     }
 
@@ -177,7 +176,7 @@ function RevisarExamen(){
 
         return (
             <div>
-                <h3 className="mt-2 mb-4">Pregunta {Siguiente - 1}: {Pregunta}</h3>
+                <h3 className="mt-2 mb-4">Question {Siguiente - 1}: {Pregunta}</h3>
                 <div>
                     <p>Opciones:</p>                        
                     <p>{OpcionUno}</p>
@@ -188,24 +187,24 @@ function RevisarExamen(){
                 </div>
                 <div>
                     <br></br>
-                    <h5>Respuesta Ingresada: {RespuestaValor}</h5>
+                    <h5>Submitted Answer: {RespuestaValor}</h5>
                 </div>
                 <div>
                     <br></br>
                     <form onSubmit={SubirOpcion}>
                         <div className="form-check">
-                            <label for="opc1">Correcto</label>
+                            <label for="opc1">Correct</label>
                             <input id="opc1" type="radio" name="react-tips" value="option1" checked={Opcion === "option1"} onChange={SeleccionOpcion} className="form-check-input"/>
                         </div>
                         <div className="form-check">
-                            <label for="opc2">Incorrecto</label>
+                            <label for="opc2">Incorrect</label>
                             <input id="opc2" type="radio" name="react-tips" value="option2" checked={Opcion === "option2"} onChange={SeleccionOpcion} className="form-check-input"/>
                         </div>
                         <div className="form-group">
-                            <button className="mt-4" type="submit">Subir Revision</button>
+                            <button className="mt-4" type="submit">Submit Review:</button>
                         </div>
                         <div className="mt-4">
-                            <p>Respuesta Ingresada: {RespuestaUnica}</p>
+                            <p>Submitted Review: {RespuestaUnica}</p>
                         </div>
                     </form>
                 </div>
@@ -235,7 +234,7 @@ function RevisarExamen(){
 
         for (var i = 0; i < Longitud; i++){
             var PreguntaCorregida = ExamenCorregido[i];
-            if (PreguntaCorregida['_revision'] == 'Correcto'){
+            if (PreguntaCorregida['_revision'] == 'Correct'){
                 Aciertos = Aciertos + 1;
             }
         }
@@ -245,15 +244,15 @@ function RevisarExamen(){
         return (
             <div>
                 <br></br>
-                <h6>El alumno Grupo 5 ha conseguido {Aciertos} aciertos de un total de {Longitud} preguntas.</h6>
+                <h6>Student Grupo 5 has got {Aciertos} correct answers from {Longitud} questions.</h6>
                 <br></br>
-                <h4>Nombre: Nombre del Alumno</h4>
+                <h4>Name: Nombre del Alumno</h4>
                 <br></br>
-                <h4>Curso: Curso del Alumno</h4>
+                <h4>Course: Curso del Alumno</h4>
                 <br></br>
-                <h4>Aciertos: {Aciertos} / {Longitud}</h4>
+                <h4>Correct Answers: {Aciertos} / {Longitud}</h4>
                 <br></br>
-                <h4>Nota: {Nota} / 20</h4>
+                <h4>Score: {Nota} / 20</h4>
             </div>
         )
     }
@@ -264,7 +263,7 @@ function RevisarExamen(){
                 <body>
                     <Navbar/>
                     <br></br>
-                    <h1>Revision de Examen</h1>
+                    <h1>Exam Review</h1>
                     <div className="card mt-4" id="darExamen">        
                         <div className="card-body">
                             <div>

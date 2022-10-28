@@ -54,7 +54,7 @@ const Curso = () => {
                   Evaluation
                 </div>
                 <div className="col">
-                  <Link to='/FormularioEvaluacion'>
+                  <Link to={'/FormularioEvaluacion?id_curso='+ get_id_curso +'&nombre_curso='+ get_nombre_curso}>
                     <button type="button" className="btn btn-success">Go to test</button>
                   </Link>
                 </div>

@@ -55,7 +55,7 @@ function Examen(){
     function BotonIniciar(){
         return (
             <div>
-                <button className="mt-2 mb-2 btn btn-primary" onClick={IniciarExamen}>Iniciar Examen</button>
+                <button className="mt-2 mb-2 btn btn-primary" onClick={IniciarExamen}>Start Exam</button>
             </div>
         )
     }
@@ -63,7 +63,7 @@ function Examen(){
     function BotonSiguiente(){
         return (
             <div>
-                <button className="mt-2 mb-2 btn btn-primary" onClick={PasarSiguiente}>Siguiente Pregunta</button>
+                <button className="mt-2 mb-2 btn btn-primary" onClick={PasarSiguiente}>Next Question</button>
             </div>
         )
     }
@@ -71,7 +71,7 @@ function Examen(){
     function BotonFinalizar(){
         return (
             <div>
-                <a className="mt-2 mb-2 btn btn-secondary" onClick={FinalizarExamen}>Finalizar Examen</a>
+                <a className="mt-2 mb-2 btn btn-secondary" onClick={FinalizarExamen}>Finish Exam</a>
             </div>
         )
     }
@@ -243,7 +243,7 @@ function Examen(){
             if (Clase == 'Dos Opciones'){
                 return (
                     <div>
-                        <h3 className="mt-2 mb-4">Pregunta {Siguiente - 1}: {Pregunta}</h3>
+                        <h3 className="mt-2 mb-4">Question {Siguiente - 1}: {Pregunta}</h3>
                         <form onSubmit={SubirOpcion}>
                         <div className="form-check">
                             <label for="opc1">{OpcionUno}</label>
@@ -254,10 +254,10 @@ function Examen(){
                             <input id="opc2" type="radio" name="react-tips" value="option2" checked={Opcion === "option2"} onChange={SeleccionOpcion} className="form-check-input"/>
                         </div>
                         <div className="form-group">
-                            <button className="mt-4" type="submit">Subir Respuesta</button>
+                            <button className="mt-4" type="submit">Submit Answer</button>
                         </div>
                         <div className="mt-4">
-                            <p>Respuesta Ingresada: {RespuestaUnica}</p>
+                            <p>Submitted Answer: {RespuestaUnica}</p>
                         </div>
                         </form>
                     </div>
@@ -266,7 +266,7 @@ function Examen(){
             if (Clase == 'Tres Opciones'){
                 return (
                     <div>
-                        <h3 className="mt-2 mb-4">Pregunta {Siguiente - 1}: {Pregunta}</h3>
+                        <h3 className="mt-2 mb-4">Question {Siguiente - 1}: {Pregunta}</h3>
                         <form onSubmit={SubirOpcion}>
                         <div className="form-check">
                             <label for="opc1">{OpcionUno}</label>
@@ -281,10 +281,10 @@ function Examen(){
                             <input id="opc3" type="radio" name="react-tips" value="option3" checked={Opcion === "option3"} onChange={SeleccionOpcion} className="form-check-input"/>
                         </div>
                         <div className="form-group">
-                            <button className="mt-4" type="submit">Subir Respuesta</button>
+                            <button className="mt-4" type="submit">Submit Answer</button>
                         </div>
                         <div className="mt-4">
-                            <p>Respuesta Ingresada: {RespuestaUnica}</p>
+                            <p>Submitted Answer: {RespuestaUnica}</p>
                         </div>
                         </form>
                     </div>
@@ -293,7 +293,7 @@ function Examen(){
             if (Clase == 'Cuatro Opciones'){
                 return (
                     <div>
-                        <h3 className="mt-2 mb-4">Pregunta {Siguiente - 1}: {Pregunta}</h3>
+                        <h3 className="mt-2 mb-4">Question {Siguiente - 1}: {Pregunta}</h3>
                         <form onSubmit={SubirOpcion}>
                         <div className="form-check">
                             <label for="opc1">{OpcionUno}</label>
@@ -312,10 +312,10 @@ function Examen(){
                             <input id="opc4" type="radio" name="react-tips" value="option4" checked={Opcion === "option4"} onChange={SeleccionOpcion} className="form-check-input"/>
                         </div>
                         <div className="form-group">
-                            <button className="mt-4" type="submit">Subir Respuesta</button>
+                            <button className="mt-4" type="submit">Submit Answer</button>
                         </div>
                         <div className="mt-4">
-                            <p>Respuesta Ingresada: {RespuestaUnica}</p>
+                            <p>Submitted Answer: {RespuestaUnica}</p>
                         </div>
                         </form>
                     </div>
@@ -324,7 +324,7 @@ function Examen(){
             if (Clase == 'Cinco Opciones'){
                 return (
                     <div>
-                        <h3 className="mt-2 mb-4">Pregunta {Siguiente - 1}: {Pregunta}</h3>
+                        <h3 className="mt-2 mb-4">Question {Siguiente - 1}: {Pregunta}</h3>
                         <form onSubmit={SubirOpcion}>
                         <div className="form-check">
                             <label for="opc1">{OpcionUno}</label>
@@ -347,10 +347,10 @@ function Examen(){
                             <input id="opc5" type="radio" name="react-tips" value="option5" checked={Opcion === "option5"} onChange={SeleccionOpcion} className="form-check-input"/>
                         </div>
                         <div className="form-group">
-                            <button className="mt-4" type="submit">Subir Respuesta</button>
+                            <button className="mt-4" type="submit">Submit Answer</button>
                         </div>
                         <div className="mt-4">
-                            <p>Respuesta Ingresada: {RespuestaUnica}</p>
+                            <p>Submitted Answer: {RespuestaUnica}</p>
                         </div>
                         </form>
                     </div>
@@ -361,16 +361,16 @@ function Examen(){
             if (Clase == 'Cuatro Opciones'){
                 return (
                     <div>
-                        <h3 className="mt-2 mb-4">Pregunta {Siguiente - 1}: {Pregunta}</h3>
+                        <h3 className="mt-2 mb-4">Question {Siguiente - 1}: {Pregunta}</h3>
                         <Checkbox label={OpcionUno} value={EstadoUno} onChange={handleChangeUno}/>
                         <Checkbox label={OpcionDos} value={EstadoDos} onChange={handleChangeDos}/>
                         <Checkbox label={OpcionTres} value={EstadoTres} onChange={handleChangeTres}/>
                         <Checkbox label={OpcionCuatro} value={EstadoCuatro} onChange={handleChangeCuatro}/>
                         <div className="form-group">
-                            <button className="mt-4" type="submit" onClick={SubirRespuestaMultiple}>Subir Respuesta</button>
+                            <button className="mt-4" type="submit" onClick={SubirRespuestaMultiple}>Submit Answer</button>
                         </div>
                         <div className="mt-4">
-                            <p>Respuestas Seleccionadas: {RespuestaMultipleValor}</p>
+                            <p>Submitted Answers: {RespuestaMultipleValor}</p>
                         </div>
                     </div>
                 );
@@ -378,17 +378,17 @@ function Examen(){
             if (Clase == 'Cinco Opciones'){
                 return (
                     <div>
-                        <h3 className="mt-2 mb-4">Pregunta {Siguiente - 1}: {Pregunta}</h3>
+                        <h3 className="mt-2 mb-4">Question {Siguiente - 1}: {Pregunta}</h3>
                         <Checkbox label={OpcionUno} value={EstadoUno} onChange={handleChangeUno}/>
                         <Checkbox label={OpcionDos} value={EstadoDos} onChange={handleChangeDos}/>
                         <Checkbox label={OpcionTres} value={EstadoTres} onChange={handleChangeTres}/>
                         <Checkbox label={OpcionCuatro} value={EstadoCuatro} onChange={handleChangeCuatro}/>
                         <Checkbox label={OpcionCinco} value={EstadoCinco} onChange={handleChangeCinco}/>
                         <div className="form-group">
-                            <button className="mt-4" type="submit" onClick={SubirRespuestaMultiple}>Subir Respuesta</button>
+                            <button className="mt-4" type="submit" onClick={SubirRespuestaMultiple}>Submit Answer</button>
                         </div>
                         <div className="mt-4">
-                            <p>Respuestas Seleccionadas: {RespuestaMultipleValor}</p>
+                            <p>Submitted Answers: {RespuestaMultipleValor}</p>
                         </div>
                     </div>
                 );
@@ -396,7 +396,7 @@ function Examen(){
             if (Clase == 'Seis Opciones'){
                 return (
                     <div>
-                        <h3 className="mt-2 mb-4">Pregunta {Siguiente - 1}: {Pregunta}</h3>
+                        <h3 className="mt-2 mb-4">Question {Siguiente - 1}: {Pregunta}</h3>
                         <Checkbox label={OpcionUno} value={EstadoUno} onChange={handleChangeUno}/>
                         <Checkbox label={OpcionDos} value={EstadoDos} onChange={handleChangeDos}/>
                         <Checkbox label={OpcionTres} value={EstadoTres} onChange={handleChangeTres}/>
@@ -404,10 +404,10 @@ function Examen(){
                         <Checkbox label={OpcionCinco} value={EstadoCinco} onChange={handleChangeCinco}/>
                         <Checkbox label={OpcionSeis} value={EstadoSeis} onChange={handleChangeSeis}/>
                         <div className="form-group">
-                            <button className="mt-4" type="submit" onClick={SubirRespuestaMultiple}>Subir Respuesta</button>
+                            <button className="mt-4" type="submit" onClick={SubirRespuestaMultiple}>Submit Answer</button>
                         </div>
                         <div className="mt-4">
-                            <p>Respuestas Seleccionadas: {RespuestaMultipleValor}</p>
+                            <p>Submitted Answers: {RespuestaMultipleValor}</p>
                         </div>
                     </div>
                 );
@@ -415,7 +415,7 @@ function Examen(){
             if (Clase == 'Siete Opciones'){
                 return (
                     <div>
-                        <h3 className="mt-2 mb-4">Pregunta {Siguiente - 1}: {Pregunta}</h3>
+                        <h3 className="mt-2 mb-4">Question {Siguiente - 1}: {Pregunta}</h3>
                         <Checkbox label={OpcionUno} value={EstadoUno} onChange={handleChangeUno}/>
                         <Checkbox label={OpcionDos} value={EstadoDos} onChange={handleChangeDos}/>
                         <Checkbox label={OpcionTres} value={EstadoTres} onChange={handleChangeTres}/>
@@ -424,10 +424,10 @@ function Examen(){
                         <Checkbox label={OpcionSeis} value={EstadoSeis} onChange={handleChangeSeis}/>
                         <Checkbox label={OpcionSiete} value={EstadoSiete} onChange={handleChangeSiete}/>
                         <div className="form-group">
-                            <button className="mt-4" type="submit" onClick={SubirRespuestaMultiple}>Subir Respuesta</button>
+                            <button className="mt-4" type="submit" onClick={SubirRespuestaMultiple}>Submit Answer</button>
                         </div>
                         <div className="mt-4">
-                            <p>Respuestas Seleccionadas: {RespuestaMultipleValor}</p>
+                            <p>Submitted Answers: {RespuestaMultipleValor}</p>
                         </div>
                     </div>
                 );
@@ -475,7 +475,7 @@ function Examen(){
             <div className="w-75 p-3">
                 <body>
                     <br></br>
-                    <h1>Examen</h1>
+                    <h1>Exam</h1>
                     <div className="card mt-4" id="darExamen">        
                         <div className="card-body">
                             <div>
