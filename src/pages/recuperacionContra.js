@@ -55,12 +55,12 @@ export default function RecContra(){
         <div className='row my-5 '  >
             <div className='col '></div>
             <div className='col  text-center px-5 border border-dark p-4 rounded' >
-                <h1 className='text-center mb-5'>RECUPERAR CONTRASEÑA</h1>
+                <h1 className='text-center mb-5'>GET YOUR PASSWORD AGAIN</h1>
 
 
                 <form onSubmit={handleSubmit} method="get" required>
                     
-                    <label>Ingrese su correo electrónico:</label>
+                    <label>Upload your E-MAIL:</label>
                     <div className="my-3">                        
                         <input type="text" name="email" className="form-control mx-2 my-2 input-group" placeholder="E-mail" required></input>
                     </div>
@@ -71,11 +71,11 @@ export default function RecContra(){
                     <div className="input-group my-3">                        
                         <input  value={confTok}  type="text" name="codver" className="form-control mx-2 my-2" onChange={e => setConfTok(e.target.value)} placeholder='Código de verificacion' required></input>
                     </div>
-                    <label className="mb-3" >Ingrese su nueva contraseña:</label>                        
+                    <label className="mb-3" >Upload your new password:</label>                        
                     <div className="input-group">
                         <input type="password" name="password" className="form-control mx-2 my-2" onChange={handleChangeInput} placeholder='Nueva Contraseña' required></input>
                     </div>
-                    <label className="mt-4 mb-3" >Ingrese su nueva contraseña nuevaente:</label>                        
+                    <label className="mt-4 mb-3" >Upload your new password again:</label>                        
                     <div className="input-group">
                         <input type="password" name="password" className="form-control mx-2 my-2" onChange={handleChangeInput} placeholder='Nueva Contraseña otra vez' required></input>
                     </div>
