@@ -2,7 +2,7 @@ import FactoryConsulta from "./FactoryConsulta";
 
 class FactoryHilo {
     crearHilo(tipo){
-        if (tipo == 'Consulta'){
+        if (tipo === 'Consulta'){
             return new FactoryConsulta;
         }
         else{
