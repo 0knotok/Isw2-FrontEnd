@@ -21,3 +21,8 @@ body{
   justify-content: center;
   width: 40%;
 }
+
+.img-foro{
+  display: block;
+  width: 200px;
+}

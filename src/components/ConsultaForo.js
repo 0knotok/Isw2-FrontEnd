@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import FactoryHilo from "./ObjetosForo/FactoryHilo";
 import { IoMdSend } from "react-icons/io";
+import { AiOutlinePaperClip } from "react-icons/ai";
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 function ConsultaForo(){
   
@@ -22,6 +25,26 @@ function ConsultaForo(){
     const handleClick = event => {
       setIsShown(current => !current);
     };
+
+    // Subir archivos
+    const[formFile, setFile] = useState();
+    const[formType, setType] = useState();
+    const[formName, setName] = useState();
+
+    function handleChangeInput(event) {
+      event.preventDefault();
+      let files = event.target.files;
+      setName(files[0].name);
+      setType(formName.split('.').pop())
+      console.log(formType)
+      let reader = new FileReader();
+      reader.readAsDataURL(files[0]);
+      reader.onload = (e) => {
+        const pdf = e.target.result;
+        setFile(pdf);
+      }
+    }
+
     
     function Preguntar() {
   
@@ -32,7 +55,10 @@ function ConsultaForo(){
               <form onSubmit={R}>
                 <label for="txtresp">Answer a question</label><br></br>
                 <div class="row mt-3">
-                  <div class="col-11"> <input className="form-control" id="txtresp" type="text"></input><br></br></div>
+                  <div class="col-10"> <input className="form-control" id="txtresp" type="text"></input><br></br></div>
+                  <div class="col-1">
+                    <input type="file" name="uploadFile" onChange={(e)=>handleChangeInput(e)} />
+                  </div>
                   <div class="col-1 "><button className="mb-3 btn btn-primary" type="submit"><IoMdSend /> </button></div>
                 </div>        
               </form>
@@ -44,13 +70,20 @@ function ConsultaForo(){
       else {
         return (
           <div>
+          
             <div className="mt-2" id="pregunta">
               <form onSubmit={P}>
                 <label for="txtpreg">Make a question:</label><br></br>
                 <div class="row mt-3">
-                  <div class="col-11"><input className=" form-control" id="txtpreg" type="text"></input><br></br></div>
-                  <div class="col-1 "><button className="mb-3 btn btn-primary " type="submit"><IoMdSend /></button></div>
+                  <div class="col-11">
+                    <input className=" form-control" id="txtpreg" type="text"></input><br></br>
+                  </div>
+                  <div class="col-1 ">
+                    <button className="mb-3 btn btn-primary " type="submit"><IoMdSend /></button>
+                  </div>
                 </div>
+                <input class ="mb-4" type="file" name="uploadFile" onChange={(e)=>handleChangeInput(e)} />
+                {formFile? <img src={formFile} class="img-thumbnail mb-2 img-foro"></img> : "ola"}
               </form>
             </div>
           </div>
