@@ -31,8 +31,10 @@ function ConsultaForo(){
             <div className="mt-2" id="respuesta">
               <form onSubmit={R}>
                 <label for="txtresp">Answer a question</label><br></br>
-                <input className="mt-3 form-control" id="txtresp" type="text"></input><br></br>
-                <button className="mb-3 btn btn-primary" type="submit">Your answer </button>
+                <div class="row mt-3">
+                  <div class="col-11"> <input className="form-control" id="txtresp" type="text"></input><br></br></div>
+                  <div class="col-1 "><button className="mb-3 btn btn-primary" type="submit"><IoMdSend /> </button></div>
+                </div>        
               </form>
             </div>
           </div>
@@ -45,7 +47,7 @@ function ConsultaForo(){
             <div className="mt-2" id="pregunta">
               <form onSubmit={P}>
                 <label for="txtpreg">Make a question:</label><br></br>
-                <div class="row">
+                <div class="row mt-3">
                   <div class="col-11"><input className=" form-control" id="txtpreg" type="text"></input><br></br></div>
                   <div class="col-1 "><button className="mb-3 btn btn-primary " type="submit"><IoMdSend /></button></div>
                 </div>
