@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar';
 import CrearConsulta from '../components/ConsultaForo.js';
+import SubirVideoForo from '../components/subirVideoForo';
 
 function ForoPagina(){
   return (
@@ -9,7 +10,7 @@ function ForoPagina(){
           <Navbar/>
           <div className="card mt-4" id="foro">
             <div className="card-body">
-              <h3>Forum 1: Gramaticc</h3><br></br>
+              <h3>Forum 1: Grammar</h3><br></br>
               <h6>Create a thread and start making questions:</h6><br></br>
               <div>
                 <CrearConsulta />
