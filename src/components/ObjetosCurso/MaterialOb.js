@@ -1,7 +1,9 @@
+import CursoOb from './CursoOb'
+
 class Material{
     constructor(id_material,id_curso,link){
         this.id_material = id_material;
-        this.id_curso = id_curso;
+        this.id_curso = new CursoOb();
         this.link = link;
     }
 

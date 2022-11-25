@@ -8,6 +8,7 @@ import { FiSearch } from 'react-icons/fi'
 import { NavLink } from 'react-router-dom';
 import Cookies from "universal-cookie";
 import Axios from "axios";
+import CursoOb from '../components/ObjetosCurso/CursoOb'
 
 export default function Portal() {
   const cookies = new Cookies();
@@ -30,7 +31,12 @@ export default function Portal() {
    })
    solouna++
  };*/
+
+  const cursoOb = new CursoOb();
+
   const [cursos, setCursos] = useState([]);  //array de datos
+
+
 
   useEffect(() => {
 
