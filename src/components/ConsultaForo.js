@@ -34,9 +34,20 @@ function ConsultaForo() {
   function handleChangeInput(event) {
     event.preventDefault();
     let files = event.target.files;
-    setName(files[0].name);
-    setType(formName.split('.').pop())
-    console.log(formType)
+    let nameFile = files[0].name;
+    setName(nameFile);
+
+    //Obtener tipo de archivo
+    let extImg =  /(.jpg|.png|.jpeg)$/i;
+    let extAud =  /(.mp3|.wav|.ogg)$/i;
+    
+    if(extImg.exec(nameFile)){
+      setType('Imagen');}
+    if(extAud.exec(nameFile)){
+        setType('Audio')
+      }
+    
+
     let reader = new FileReader();
     reader.readAsDataURL(files[0]);
     reader.onload = (e) => {
@@ -45,25 +56,36 @@ function ConsultaForo() {
     }
   }
 
+  //Input
+  const [txt, setTxt] = useState("");
+  
+  function handleTxt(event) {
+    setTxt({
+      ...txt,
+      [event.target.name]: event.target.value
+    })
+  }
 
+  console.log(txt);
   function Preguntar() {
 
     if (pregunta !== "") {
+      //Responder pregunta
       return (
         <div>
           <div className="mt-2" id="respuesta">
             <form onSubmit={R}>
-              <label for="txtresp">Answer a question</label><br></br>
-              <div class="row mt-3">
-                <div class="col-11">
+              <label htmlFor="txtresp">Answer a question</label><br></br>
+              <div className="row mt-3">
+                <div className="col-11">
                   <input className="form-control" id="txtresp" type="text"></input><br></br>
                 </div>
-                <div class="col-1">
-                  <div class="col-1 "><button className="mb-3 btn btn-primary" type="submit"><IoMdSend /> </button></div>
+                <div className="col-1">
+                  <div className="col-1 "><button className="mb-3 btn btn-primary" type="submit"><IoMdSend /> </button></div>
                 </div>
                </div>
-                <input class="mb-4" type="file" name="uploadFile" onChange={(e) => handleChangeInput(e)} />
-                {formFile ? <img src={formFile} class="img-thumbnail mb-2 img-foro"></img> : "ola"}
+                <input className="mb-4" type="file" name="uploadFile" onChange={(e) => handleChangeInput(e)} />
+                {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro"></img> : "ola"}
               
             </form>
           </div>
@@ -72,22 +94,29 @@ function ConsultaForo() {
     }
 
     else {
+      //Realizar una pregunta
       return (
         <div>
 
           <div className="mt-2" id="pregunta">
             <form onSubmit={P}>
-              <label for="txtpreg">Make a question:</label><br></br>
-              <div class="row mt-3">
-                <div class="col-11">
-                  <input className=" form-control" id="txtpreg" type="text"></input><br></br>
+              <div className="row mt-3">
+                <div className="col-11">
+                  <input name="txt" className="form-control" id="txtpreg" type="text" onChange={(e) => handleTxt(e)} placeholder="Make a question" defaultValue={""}></input><br></br>
                 </div>
-                <div class="col-1 ">
+                <div className="col-1 ">
                   <button className="mb-3 btn btn-primary " type="submit"><IoMdSend /></button>
                 </div>
               </div>
-              <input class="mb-4" type="file" name="uploadFile" onChange={(e) => handleChangeInput(e)} />
-              {formFile ? <img src={formFile} class="img-thumbnail mb-2 img-foro"></img> : "ola"}
+              <input className="mb-4" type="file" name="uploadFile" onChange={(e) => handleChangeInput(e)} />
+              {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro"></img>: 
+                formFile && formType === 'Audio' ? <audio controls src={formFile} className="d-block mb-3"></audio>
+
+
+
+                                                
+                                                  
+                                                  :"ola"}
             </form>
           </div>
         </div>
@@ -128,7 +157,7 @@ function ConsultaForo() {
   }
 
   return (
-    <div class="container border mb-3">
+    <div className="container border mb-3">
       <div className="mt-3">
         <p>Question: {CrearConsultaPendiente()}</p>
       </div>
