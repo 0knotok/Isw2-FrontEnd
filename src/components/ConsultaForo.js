@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import FactoryHilo from "./ObjetosForo/FactoryHilo";
 import { IoMdSend } from "react-icons/io";
-import { AiOutlinePaperClip } from "react-icons/ai";
+import { AiOutlineConsoleSql, AiOutlinePaperClip } from "react-icons/ai";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
@@ -9,7 +9,7 @@ function ConsultaForo() {
 
   const P = (event) => {
     event.preventDefault();
-    setP(event.target[0].value);
+    setP({...pregunta, texto: event.target[0].value, archivo: formFile, tipo: formType})
   };
 
   const R = (event) => {
@@ -18,7 +18,13 @@ function ConsultaForo() {
     setIsShown(current => !current);
   };
 
-  const [pregunta, setP] = useState("");
+  const [pregunta, setP] = useState(
+    {
+      texto: "",
+      archivo: "",
+      tipo: ""
+    }
+  )
   const [respuesta, setR] = useState("");
   const [isShown, setIsShown] = useState(false);
 
@@ -55,21 +61,9 @@ function ConsultaForo() {
       setFile(pdf);
     }
   }
-
-  //Input
-  const [txt, setTxt] = useState("");
-  
-  function handleTxt(event) {
-    setTxt({
-      ...txt,
-      [event.target.name]: event.target.value
-    })
-  }
-
-  console.log(txt);
   function Preguntar() {
 
-    if (pregunta !== "") {
+    if (pregunta.texto !== "") {
       //Responder pregunta
       return (
         <div>
@@ -85,7 +79,7 @@ function ConsultaForo() {
                 </div>
                </div>
                 <input className="mb-4" type="file" name="uploadFile" onChange={(e) => handleChangeInput(e)} />
-                {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro"></img> : "ola"}
+                {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro"></img> : "Seleccione un archivo "}
               
             </form>
           </div>
@@ -102,7 +96,7 @@ function ConsultaForo() {
             <form onSubmit={P}>
               <div className="row mt-3">
                 <div className="col-11">
-                  <input name="txt" className="form-control" id="txtpreg" type="text" onChange={(e) => handleTxt(e)} placeholder="Make a question" defaultValue={""}></input><br></br>
+                  <input name="txt" className="form-control" id="txtpreg" type="text" placeholder="Make a question" defaultValue={""}></input><br></br>
                 </div>
                 <div className="col-1 ">
                   <button className="mb-3 btn btn-primary " type="submit"><IoMdSend /></button>
@@ -111,12 +105,7 @@ function ConsultaForo() {
               <input className="mb-4" type="file" name="uploadFile" onChange={(e) => handleChangeInput(e)} />
               {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro"></img>: 
                 formFile && formType === 'Audio' ? <audio controls src={formFile} className="d-block mb-3"></audio>
-
-
-
-                                                
-                                                  
-                                                  :"ola"}
+                 :<p className="d-block mb-3">Seleccione un archivo</p>}
             </form>
           </div>
         </div>
@@ -130,8 +119,8 @@ function ConsultaForo() {
   const consulta = hilo.crearEstado('Pendiente');
 
   function CrearConsultaPendiente() {
-    if (pregunta !== "") {
-      consulta.setmensaje = pregunta;
+    if (pregunta.texto !== "") {
+      consulta.setmensaje = pregunta.texto;
       const renderPre = consulta.getmensaje;
 
       //Añadir a un Array
