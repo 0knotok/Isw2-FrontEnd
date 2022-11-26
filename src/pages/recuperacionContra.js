@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import Navbar from '../components/Navbar.js';
 import Axios from "axios";
-import Cookies from "universal-cookie";
+
 
 
 export default function RecContra(){

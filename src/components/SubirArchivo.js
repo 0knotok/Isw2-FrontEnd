@@ -84,7 +84,6 @@ export default function SubirArchivo(){
             <div>
               <button type="submit" name="submitFile" onClick={(e)=>submitFile(e)} className="btn btn-primary ml-2 align-items-center">Submit</button>
             </div>
-           
         </div>
     )
 }
