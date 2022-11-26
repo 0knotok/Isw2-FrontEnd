@@ -43,8 +43,8 @@ export default function Portal() {
   Axios.get("http://localhost:4000/buscaAlumnos").then(function (response) {
     if (response.statusText === "OK") {
       // Enviar cursos
-      setAlumno(response.data);
-      console.log(response.data)
+      setAlumno(response.data.rows);
+      console.log(response.data.rows)
     }
   })
     .catch(function (error) {
@@ -71,7 +71,7 @@ export default function Portal() {
           </div>
           <Zoom />
         </div>
-        <div className='d-flex mt-6 justify-content-between'>
+        <div className='d-flex mt-2 justify-content-between'>
           <div className='container'>
             <h1>Create Evaluation</h1>
             <br></br>
@@ -80,8 +80,13 @@ export default function Portal() {
             </Link>
           </div>
         </div>
-        <div className='d-flex'>
-          <Comentarios nombre = {"luis"}></Comentarios>
+        <div className='d-flex mt-2 justify-content-between'>
+        <h1 className='my-5 mx-5'>Comment your students progress</h1>  
+        </div>
+        <div className='d-flex mx-5'>
+          
+        
+          <Comentarios nombre = {"Luis"}></Comentarios>
           {alumno.map((alumno) => (
             <Comentarios nombre = {alumno.PRIMER_NOM}/>
           ))}
