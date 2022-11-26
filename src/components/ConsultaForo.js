@@ -9,7 +9,7 @@ function ConsultaForo() {
 
   const P = (event) => {
     event.preventDefault();
-    setP({...pregunta, texto: event.target[0].value, archivo: formFile, tipo: formType})
+    setP({ ...pregunta, texto: event.target[0].value, archivo: formFile, tipo: formType })
   };
 
   const R = (event) => {
@@ -44,15 +44,19 @@ function ConsultaForo() {
     setName(nameFile);
 
     //Obtener tipo de archivo
-    let extImg =  /(.jpg|.png|.jpeg)$/i;
-    let extAud =  /(.mp3|.wav|.ogg)$/i;
-    
-    if(extImg.exec(nameFile)){
-      setType('Imagen');}
-    if(extAud.exec(nameFile)){
-        setType('Audio')
-      }
-    
+    let extImg = /(.jpg|.png|.jpeg)$/i;
+    let extAud = /(.mp3|.wav|.ogg)$/i;
+    let extGif = /(.gif|.apng)$/i;
+
+    if (extImg.exec(nameFile)) {
+      setType('Imagen');
+    }
+    if (extAud.exec(nameFile)) {
+      setType('Audio')
+    }
+    if (extGif.exec(nameFile)) {
+      setType('Gif')
+    }
 
     let reader = new FileReader();
     reader.readAsDataURL(files[0]);
@@ -77,10 +81,12 @@ function ConsultaForo() {
                 <div className="col-1">
                   <div className="col-1 "><button className="mb-3 btn btn-primary" type="submit"><IoMdSend /> </button></div>
                 </div>
-               </div>
-                <input className="mb-4" type="file" name="uploadFile" onChange={(e) => handleChangeInput(e)} />
-                {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro"></img> : "Seleccione un archivo "}
-              
+              </div>
+              <input className="mb-4" type="file" name="uploadFile" onChange={(e) => handleChangeInput(e)} />
+              {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro"></img> :
+                formFile && formType === 'Gif' ? <img src={formFile} className="d-block mb-3 gif-foro"></img>
+                  : <p className="d-block mb-3">Seleccione un archivo</p>}
+
             </form>
           </div>
         </div>
@@ -103,9 +109,9 @@ function ConsultaForo() {
                 </div>
               </div>
               <input className="mb-4" type="file" name="uploadFile" onChange={(e) => handleChangeInput(e)} />
-              {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro"></img>: 
+              {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro"></img> :
                 formFile && formType === 'Audio' ? <audio controls src={formFile} className="d-block mb-3"></audio>
-                 :<p className="d-block mb-3">Seleccione un archivo</p>}
+                  : <p className="d-block mb-3">Seleccione un archivo</p>}
             </form>
           </div>
         </div>
