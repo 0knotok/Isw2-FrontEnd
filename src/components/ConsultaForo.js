@@ -47,6 +47,7 @@ function ConsultaForo() {
     let extImg = /(.jpg|.png|.jpeg)$/i;
     let extAud = /(.mp3|.wav|.ogg)$/i;
     let extGif = /(.gif|.apng)$/i;
+    let extVid = /(.mp4|.mov|.wmv)$/i;
 
     if (extImg.exec(nameFile)) {
       setType('Imagen');
@@ -56,6 +57,10 @@ function ConsultaForo() {
     }
     if (extGif.exec(nameFile)) {
       setType('Gif')
+    }
+
+    if (extVid.exec(nameFile)) {
+      setType('Video')
     }
 
     let reader = new FileReader();
@@ -84,9 +89,8 @@ function ConsultaForo() {
               </div>
               <input className="mb-4" type="file" name="uploadFile" onChange={(e) => handleChangeInput(e)} />
               {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro"></img> :
-                formFile && formType === 'Gif' ? <img src={formFile} className="d-block mb-3 gif-foro"></img>
+                formFile && formType === 'Gif' ? <img src={formFile} className="d-block mb-3 gif-foro"></img> 
                   : <p className="d-block mb-3">Seleccione un archivo</p>}
-
             </form>
           </div>
         </div>
@@ -110,6 +114,7 @@ function ConsultaForo() {
               </div>
               <input className="mb-4" type="file" name="uploadFile" onChange={(e) => handleChangeInput(e)} />
               {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro"></img> :
+                 formFile && formType === 'Gif' ? <img src={formFile} className="d-block mb-3 gif-foro"></img> :
                 formFile && formType === 'Audio' ? <audio controls src={formFile} className="d-block mb-3"></audio>
                   : <p className="d-block mb-3">Seleccione un archivo</p>}
             </form>
