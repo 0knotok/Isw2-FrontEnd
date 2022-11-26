@@ -1,7 +1,8 @@
 class Hilo {
-    constructor(tipo, mensaje){
+    constructor(tipo, mensaje, archivo){
         this._tipo = tipo;
         this._mensaje = mensaje;
+        this._archivo = archivo;
     }
 
     get gettipo() {
@@ -12,8 +13,20 @@ class Hilo {
         return this._mensaje;
     }
 
+    get getarchivo() {
+        return this._archivo;
+    }
+
+    set settipo(tipo) {
+        this._tipo = tipo;
+    }
+
     set setmensaje(mensaje) {
         this._mensaje = mensaje;
+    }
+
+    set setarchivo(archivo) {
+        this._archivo = archivo;
     }
 
     verMensaje() {

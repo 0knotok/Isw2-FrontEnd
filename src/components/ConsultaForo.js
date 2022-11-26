@@ -14,7 +14,7 @@ function ConsultaForo() {
 
   const R = (event) => {
     event.preventDefault();
-    setR(event.target[0].value);
+    setR({ ...respuesta, texto: event.target[0].value, archivo: formFile, tipo: formType })
     setIsShown(current => !current);
   };
 
@@ -25,7 +25,14 @@ function ConsultaForo() {
       tipo: ""
     }
   )
-  const [respuesta, setR] = useState("");
+  const [respuesta, setR] = useState(
+    {
+      texto: "",
+      archivo: "",
+      tipo: ""
+    }
+  )
+
   const [isShown, setIsShown] = useState(false);
 
   const handleClick = event => {
@@ -89,7 +96,8 @@ function ConsultaForo() {
               </div>
               <input className="mb-4" type="file" name="uploadFile" onChange={(e) => handleChangeInput(e)} />
               {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro"></img> :
-                formFile && formType === 'Gif' ? <img src={formFile} className="d-block mb-3 gif-foro"></img> 
+                 formFile && formType === 'Gif' ? <img src={formFile} className="d-block mb-3 gif-foro"></img> :
+                formFile && formType === 'Audio' ? <audio controls src={formFile} className="d-block mb-3"></audio>
                   : <p className="d-block mb-3">Seleccione un archivo</p>}
             </form>
           </div>
@@ -129,11 +137,22 @@ function ConsultaForo() {
   const hilo = Factory.crearHilo('Consulta');
   const consulta = hilo.crearEstado('Pendiente');
 
-  function CrearConsultaPendiente() {
+  function CrearConsultaPendiente(tipo) {
     if (pregunta.texto !== "") {
       consulta.setmensaje = pregunta.texto;
-      const renderPre = consulta.getmensaje;
+      consulta.settipo = pregunta.tipo;
+      consulta.setarchivo = pregunta.archivo;
+      const renderPre = [consulta.getmensaje, consulta.gettipo, consulta.getarchivo];
 
+      if(tipo === "mensaje"){
+        return renderPre[0];
+      }
+      if(tipo === "tipo"){
+        return renderPre[1];
+      }
+      if(tipo === "archivo"){
+        return renderPre[2];
+      }
       //Añadir a un Array
 
       return renderPre;
@@ -144,11 +163,23 @@ function ConsultaForo() {
   const hilo2 = Factory.crearHilo('Consulta');
   const consulta2 = hilo2.crearEstado('Resuelta');
 
-  function CrearConsultaResuelta() {
-    if (respuesta !== "") {
+  function CrearConsultaResuelta(tipo) {
+    if (respuesta.texto !== "") {
       consulta2.setmensaje = m;
-      consulta2.setrespuesta = respuesta;
-      const renderRes = consulta2.getrespuesta;
+      consulta2.setrespuesta = respuesta.texto;
+      consulta2.settipo = respuesta.tipo;
+      consulta2.setarchivo = respuesta.archivo;
+      const renderRes = [consulta2.getrespuesta, consulta2.gettipo, consulta2.getarchivo];
+
+      if(tipo === "mensaje"){
+        return renderRes[0];
+      }
+      if(tipo === "tipo"){
+        return renderRes[1];
+      }
+      if(tipo === "archivo"){
+        return renderRes[2];
+      }
 
       //Reemplazar en Array
 
@@ -159,10 +190,18 @@ function ConsultaForo() {
   return (
     <div className="container border mb-3">
       <div className="mt-3">
-        <p>Question: {CrearConsultaPendiente()}</p>
+        <p>Question: {CrearConsultaPendiente("mensaje")}</p>
+        {CrearConsultaPendiente("tipo") === 'Imagen' ? <img src={CrearConsultaPendiente("archivo")} className="img-thumbnail mb-2 img-foro"></img> :
+        CrearConsultaPendiente("tipo") === 'Gif' ? <img src={CrearConsultaPendiente("archivo")} className="d-block mb-3 gif-foro"></img> :
+        CrearConsultaPendiente("tipo") === 'Audio' ? <audio controls src={CrearConsultaPendiente("archivo")} className="d-block mb-3"></audio>
+                  : <p className="d-block mb-3"></p>}
       </div>
       <div className="mt-2">
-        <p>Answer: {CrearConsultaResuelta()}</p>
+      <p>Answer: {CrearConsultaResuelta("mensaje")}</p>
+        {CrearConsultaResuelta("tipo") === 'Imagen' ? <img src={CrearConsultaResuelta("archivo")} className="img-thumbnail mb-2 img-foro"></img> :
+        CrearConsultaResuelta("tipo") === 'Gif' ? <img src={CrearConsultaResuelta("archivo")} className="d-block mb-3 gif-foro"></img> :
+        CrearConsultaResuelta("tipo") === 'Audio' ? <audio controls src={CrearConsultaResuelta("archivo")} className="d-block mb-3"></audio>
+                  : <p className="d-block mb-3"></p>}
       </div>
       <button className="mb-3 btn btn-primary" onClick={handleClick}>Make a question</button>
       {isShown && <Preguntar />}
