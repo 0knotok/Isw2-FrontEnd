@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import FactoryHilo from "./ObjetosForo/FactoryHilo";
 import { IoMdSend } from "react-icons/io";
 import { AiOutlineConsoleSql, AiOutlinePaperClip } from "react-icons/ai";
+import ReactPlayer from "react-player";
 
 
 function ConsultaForo() {
-
   const P = (event) => {
     event.preventDefault();
     setP({ ...pregunta, texto: event.target[0].value, archivo: formFile, tipo: formType })
@@ -37,6 +37,29 @@ function ConsultaForo() {
   const handleClick = event => {
     setIsShown(current => !current);
   };
+  //ver tamaño archivos
+
+  const [selectedFile, setSelectedFile] = useState();
+  const [errorMsg, setErrorMsg] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const validateSelectedFile = () => {
+    const MAX_FILE_SIZE = 5120 // 5MB
+
+    if (!selectedFile) {
+      console.log("NO se esta enviando archivos");
+    }
+
+    const fileSizeKiloBytes = selectedFile.size / 1024
+
+    if(fileSizeKiloBytes > MAX_FILE_SIZE){
+      window.alert("Archivo demasiado pesado");
+      window.location.reload();
+    }
+    
+    console.log("archivo de tamaño adecuado");
+  }
+
 
   // Subir archivos
   const [formFile, setFile] = useState();
@@ -48,6 +71,10 @@ function ConsultaForo() {
     let files = event.target.files;
     let nameFile = files[0].name;
     setName(nameFile);
+    //llamado de tamño archivos
+    if(event.target.files.length > 0){
+      setSelectedFile(event.target.files[0]);
+    }
 
     //Obtener tipo de archivo
     let extImg = /(.jpg|.png|.jpeg)$/i;
@@ -90,12 +117,12 @@ function ConsultaForo() {
                   <input className="form-control" id="txtresp" type="text"></input><br></br>
                 </div>
                 <div className="col-1">
-                  <div className="col-1 "><button className="mb-3 btn btn-primary" type="submit"><IoMdSend /> </button></div>
+                  <div className="col-1 "><button className="mb-3 btn btn-primary" type="submit" onClick={validateSelectedFile}><IoMdSend /> </button></div>
                 </div>
               </div>
               <input className="mb-4" type="file" name="uploadFile" onChange={(e) => handleChangeInput(e)} />
-              {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro"></img> :
-                 formFile && formType === 'Gif' ? <img src={formFile} className="d-block mb-3 gif-foro"></img> :
+              {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro" alt="imagen"></img> :
+                 formFile && formType === 'Gif' ? <img src={formFile} className="d-block mb-3 gif-foro" alt="imagen"></img> :
                 formFile && formType === 'Audio' ? <audio controls src={formFile} className="d-block mb-3"></audio>
                   : <p className="d-block mb-3">Seleccione un archivo</p>}
             </form>
@@ -120,8 +147,8 @@ function ConsultaForo() {
                 </div>
               </div>
               <input className="mb-4" type="file" name="uploadFile" onChange={(e) => handleChangeInput(e)} />
-              {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro"></img> :
-                 formFile && formType === 'Gif' ? <img src={formFile} className="d-block mb-3 gif-foro"></img> :
+              {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro" alt="imagen"></img> :
+                 formFile && formType === 'Gif' ? <img src={formFile} className="d-block mb-3 gif-foro" alt="imagen"></img> :
                 formFile && formType === 'Audio' ? <audio controls src={formFile} className="d-block mb-3"></audio>
                   : <p className="d-block mb-3">Seleccione un archivo</p>}
             </form>
@@ -137,6 +164,8 @@ function ConsultaForo() {
   const consulta = hilo.crearEstado('Pendiente');
 
   function CrearConsultaPendiente(tipo) {
+
+
     if (pregunta.texto !== "") {
       consulta.setmensaje = pregunta.texto;
       consulta.settipo = pregunta.tipo;
@@ -163,6 +192,8 @@ function ConsultaForo() {
   const consulta2 = hilo2.crearEstado('Resuelta');
 
   function CrearConsultaResuelta(tipo) {
+    
+
     if (respuesta.texto !== "") {
       consulta2.setmensaje = m;
       consulta2.setrespuesta = respuesta.texto;
@@ -190,17 +221,19 @@ function ConsultaForo() {
     <div className="container border mb-3">
       <div className="mt-3">
         <p>Question: {CrearConsultaPendiente("mensaje")}</p>
-        {CrearConsultaPendiente("tipo") === 'Imagen' ? <img src={CrearConsultaPendiente("archivo")} className="img-thumbnail mb-2 img-foro"></img> :
-        CrearConsultaPendiente("tipo") === 'Gif' ? <img src={CrearConsultaPendiente("archivo")} className="d-block mb-3 gif-foro"></img> :
-        CrearConsultaPendiente("tipo") === 'Audio' ? <audio controls src={CrearConsultaPendiente("archivo")} className="d-block mb-3"></audio>
+        {CrearConsultaPendiente("tipo") === 'Imagen' ? <img src={CrearConsultaPendiente("archivo")} className="img-thumbnail mb-2 img-foro" alt="imagen"></img> :
+        CrearConsultaPendiente("tipo") === 'Gif' ? <img src={CrearConsultaPendiente("archivo")} className="d-block mb-3 gif-foro" alt="imagen"></img> :
+        CrearConsultaPendiente("tipo") === 'Audio' ? <audio controls src={CrearConsultaPendiente("archivo")} className="d-block mb-3"></audio> :
+        CrearConsultaPendiente("tipo") === 'Video' ? <video width="750" height="500" controls src={CrearConsultaPendiente("archivo")} className="d-block mb-3"></video> 
                   : <p className="d-block mb-3"></p>}
       </div>
       <div className="mt-2">
       <p>Answer: {CrearConsultaResuelta("mensaje")}</p>
-        {CrearConsultaResuelta("tipo") === 'Imagen' ? <img src={CrearConsultaResuelta("archivo")} className="img-thumbnail mb-2 img-foro"></img> :
-        CrearConsultaResuelta("tipo") === 'Gif' ? <img src={CrearConsultaResuelta("archivo")} className="d-block mb-3 gif-foro"></img> :
-        CrearConsultaResuelta("tipo") === 'Audio' ? <audio controls src={CrearConsultaResuelta("archivo")} className="d-block mb-3"></audio>
-                  : <p className="d-block mb-3"></p>}
+        {CrearConsultaResuelta("tipo") === 'Imagen' ? <img src={CrearConsultaResuelta("archivo")} className="img-thumbnail mb-2 img-foro" alt="imagen"></img> :
+        CrearConsultaResuelta("tipo") === 'Gif' ? <img src={CrearConsultaResuelta("archivo")} className="d-block mb-3 gif-foro" alt="imagen"></img> :
+        CrearConsultaResuelta("tipo") === 'Audio' ? <audio controls src={CrearConsultaResuelta("archivo")} className="d-block mb-3"></audio>: 
+        CrearConsultaResuelta("tipo") === 'Video'? <video width="750" height="500" controls><source src={CrearConsultaResuelta("archivo")}/></video>
+        :<p className="d-block mb-3"></p>}
       </div>
       <button className="mb-3 btn btn-primary" onClick={handleClick}>Make a question</button>
       {isShown && <Preguntar />}
