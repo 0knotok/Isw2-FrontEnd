@@ -121,8 +121,8 @@ function ConsultaForo() {
                 </div>
               </div>
               <input className="mb-4" type="file" name="uploadFile" onChange={(e) => handleChangeInput(e)} />
-              {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro"></img> :
-                 formFile && formType === 'Gif' ? <img src={formFile} className="d-block mb-3 gif-foro"></img> :
+              {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro" alt="imagen"></img> :
+                 formFile && formType === 'Gif' ? <img src={formFile} className="d-block mb-3 gif-foro" alt="imagen"></img> :
                 formFile && formType === 'Audio' ? <audio controls src={formFile} className="d-block mb-3"></audio>
                   : <p className="d-block mb-3">Seleccione un archivo</p>}
             </form>
@@ -147,8 +147,8 @@ function ConsultaForo() {
                 </div>
               </div>
               <input className="mb-4" type="file" name="uploadFile" onChange={(e) => handleChangeInput(e)} />
-              {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro"></img> :
-                 formFile && formType === 'Gif' ? <img src={formFile} className="d-block mb-3 gif-foro"></img> :
+              {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro" alt="imagen"></img> :
+                 formFile && formType === 'Gif' ? <img src={formFile} className="d-block mb-3 gif-foro" alt="imagen"></img> :
                 formFile && formType === 'Audio' ? <audio controls src={formFile} className="d-block mb-3"></audio>
                   : <p className="d-block mb-3">Seleccione un archivo</p>}
             </form>
@@ -221,15 +221,16 @@ function ConsultaForo() {
     <div className="container border mb-3">
       <div className="mt-3">
         <p>Question: {CrearConsultaPendiente("mensaje")}</p>
-        {CrearConsultaPendiente("tipo") === 'Imagen' ? <img src={CrearConsultaPendiente("archivo")} className="img-thumbnail mb-2 img-foro"></img> :
-        CrearConsultaPendiente("tipo") === 'Gif' ? <img src={CrearConsultaPendiente("archivo")} className="d-block mb-3 gif-foro"></img> :
-        CrearConsultaPendiente("tipo") === 'Audio' ? <audio controls src={CrearConsultaPendiente("archivo")} className="d-block mb-3"></audio>
+        {CrearConsultaPendiente("tipo") === 'Imagen' ? <img src={CrearConsultaPendiente("archivo")} className="img-thumbnail mb-2 img-foro" alt="imagen"></img> :
+        CrearConsultaPendiente("tipo") === 'Gif' ? <img src={CrearConsultaPendiente("archivo")} className="d-block mb-3 gif-foro" alt="imagen"></img> :
+        CrearConsultaPendiente("tipo") === 'Audio' ? <audio controls src={CrearConsultaPendiente("archivo")} className="d-block mb-3"></audio> :
+        CrearConsultaPendiente("tipo") === 'Video' ? <video width="750" height="500" controls src={CrearConsultaPendiente("archivo")} className="d-block mb-3"></video> 
                   : <p className="d-block mb-3"></p>}
       </div>
       <div className="mt-2">
       <p>Answer: {CrearConsultaResuelta("mensaje")}</p>
-        {CrearConsultaResuelta("tipo") === 'Imagen' ? <img src={CrearConsultaResuelta("archivo")} className="img-thumbnail mb-2 img-foro"></img> :
-        CrearConsultaResuelta("tipo") === 'Gif' ? <img src={CrearConsultaResuelta("archivo")} className="d-block mb-3 gif-foro"></img> :
+        {CrearConsultaResuelta("tipo") === 'Imagen' ? <img src={CrearConsultaResuelta("archivo")} className="img-thumbnail mb-2 img-foro" alt="imagen"></img> :
+        CrearConsultaResuelta("tipo") === 'Gif' ? <img src={CrearConsultaResuelta("archivo")} className="d-block mb-3 gif-foro" alt="imagen"></img> :
         CrearConsultaResuelta("tipo") === 'Audio' ? <audio controls src={CrearConsultaResuelta("archivo")} className="d-block mb-3"></audio>: 
         CrearConsultaResuelta("tipo") === 'Video'? <video width="750" height="500" controls><source src={CrearConsultaResuelta("archivo")}/></video>
         :<p className="d-block mb-3"></p>}
