@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import FactoryHilo from "./ObjetosForo/FactoryHilo";
 import { IoMdSend } from "react-icons/io";
 import { AiOutlineConsoleSql, AiOutlinePaperClip } from "react-icons/ai";
+import ReactPlayer from "react-player";
 
 
 function ConsultaForo() {
-
   const P = (event) => {
     event.preventDefault();
     setP({ ...pregunta, texto: event.target[0].value, archivo: formFile, tipo: formType })
@@ -199,8 +199,9 @@ function ConsultaForo() {
       <p>Answer: {CrearConsultaResuelta("mensaje")}</p>
         {CrearConsultaResuelta("tipo") === 'Imagen' ? <img src={CrearConsultaResuelta("archivo")} className="img-thumbnail mb-2 img-foro"></img> :
         CrearConsultaResuelta("tipo") === 'Gif' ? <img src={CrearConsultaResuelta("archivo")} className="d-block mb-3 gif-foro"></img> :
-        CrearConsultaResuelta("tipo") === 'Audio' ? <audio controls src={CrearConsultaResuelta("archivo")} className="d-block mb-3"></audio>
-                  : <p className="d-block mb-3"></p>}
+        CrearConsultaResuelta("tipo") === 'Audio' ? <audio controls src={CrearConsultaResuelta("archivo")} className="d-block mb-3"></audio>: 
+        CrearConsultaResuelta("tipo") === 'Video'? <video width="750" height="500" controls><source src={CrearConsultaResuelta("archivo")}/></video>
+        :<p className="d-block mb-3"></p>}
       </div>
       <button className="mb-3 btn btn-primary" onClick={handleClick}>Make a question</button>
       {isShown && <Preguntar />}
