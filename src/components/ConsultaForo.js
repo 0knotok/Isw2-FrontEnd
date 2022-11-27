@@ -13,6 +13,7 @@ function ConsultaForo() {
 
   const R = (event) => {
     event.preventDefault();
+    
     setR({ ...respuesta, texto: event.target[0].value, archivo: formFile, tipo: formType })
     setIsShown(current => !current);
   };
@@ -34,10 +35,11 @@ function ConsultaForo() {
 
   const [isShown, setIsShown] = useState(false);
 
+  const [EstadoHilo, setEstadoHilo] = useState("Make a Question");
+
   const handleClick = event => {
     setIsShown(current => !current);
-  };
-  //ver tamaño archivos
+  }; //Ver tamaño archivos
 
   const [selectedFile, setSelectedFile] = useState();
   const [errorMsg, setErrorMsg] = useState(false);
@@ -47,7 +49,11 @@ function ConsultaForo() {
     const MAX_FILE_SIZE = 5120 // 5MB
 
     if (!selectedFile) {
+<<<<<<< HEAD
       console.log("Not sending any file");
+=======
+      console.log("No se esta enviando archivos");
+>>>>>>> 2f7bf219d57c657ccd9fe972ef3b7f5c63102993
     }
 
     const fileSizeKiloBytes = selectedFile.size / 1024
@@ -57,9 +63,12 @@ function ConsultaForo() {
       window.location.reload();
     }
     
+<<<<<<< HEAD
     console.log("File well size");
+=======
+    console.log("Archivo de tamaño adecuado");
+>>>>>>> 2f7bf219d57c657ccd9fe972ef3b7f5c63102993
   }
-
 
   // Subir archivos
   const [formFile, setFile] = useState();
@@ -71,7 +80,7 @@ function ConsultaForo() {
     let files = event.target.files;
     let nameFile = files[0].name;
     setName(nameFile);
-    //llamado de tamño archivos
+    //Llamado de tamaño archivos
     if(event.target.files.length > 0){
       setSelectedFile(event.target.files[0]);
     }
@@ -91,7 +100,6 @@ function ConsultaForo() {
     if (extGif.exec(nameFile)) {
       setType('Gif')
     }
-
     if (extVid.exec(nameFile)) {
       setType('Video')
     }
@@ -107,15 +115,16 @@ function ConsultaForo() {
   function Contestar() {
 
     if (pregunta.texto !== "") {
+      setEstadoHilo("Post an Answer");
+
       //Responder pregunta
       return (
         <div>
           <div className="mt-2" id="respuesta">
             <form onSubmit={R}>
-              <label htmlFor="txtresp">Answer a question</label><br></br>
               <div className="row mt-3">
                 <div className="col-11">
-                  <input className="form-control" id="txtresp" type="text"></input><br></br>
+                  <input className="form-control" id="txtresp" type="text" placeholder="Post an Answer" defaultValue={""}></input><br></br>
                 </div>
                 <div className="col-1">
                   <div className="col-1 "><button className="mb-3 btn btn-primary" type="submit" onClick={validateSelectedFile}><IoMdSend /> </button></div>
@@ -148,10 +157,10 @@ function ConsultaForo() {
             <form onSubmit={P}>
               <div className="row mt-3">
                 <div className="col-11">
-                  <input name="txt" className="form-control" id="txtpreg" type="text" placeholder="Make a question" defaultValue={""}></input><br></br>
+                  <input name="txt" className="form-control" id="txtpreg" type="text" placeholder="Make a Question" defaultValue={""}></input><br></br>
                 </div>
                 <div className="col-1 ">
-                  <button className="mb-3 btn btn-primary " type="submit"><IoMdSend /></button>
+                  <button className="mb-3 btn btn-primary" type="submit"><IoMdSend /></button>
                 </div>
               </div>
               <input className="mb-4" type="file" name="uploadFile" onChange={(e) => handleChangeInput(e)} />
@@ -206,7 +215,6 @@ function ConsultaForo() {
 
   function CrearConsultaResuelta(tipo) {
     
-
     if (respuesta.texto !== "") {
       consulta2.setmensaje = m;
       consulta2.setrespuesta = respuesta.texto;
@@ -233,7 +241,9 @@ function ConsultaForo() {
 
   return (
     <div className="container border mb-3">
+
       <div className="mt-3">
+<<<<<<< HEAD
         <p>Question: {CrearConsultaPendiente("mensaje")} <button className="mb-3 btn btn-primary" onClick={handleClick}>Make a question</button></p>
         {CrearConsultaPendiente("tipo") === 'Imagen' ? <img src={CrearConsultaPendiente("archivo")} className="img-thumbnail mb-2 img-foro" alt="imagen"></img> :
         CrearConsultaPendiente("tipo") === 'Gif' ? <img src={CrearConsultaPendiente("archivo")} className="d-block mb-3 gif-foro" alt="imagen"></img> :
@@ -251,6 +261,28 @@ function ConsultaForo() {
       </div>
       
       {isShown && <Preguntar /> || <Contestar />}
+=======
+        <p>Question: {CrearConsultaPendiente("mensaje")}</p>
+        {CrearConsultaPendiente("tipo") === 'Imagen' ? <img src={CrearConsultaPendiente("archivo")} className="img-thumbnail mb-4 img-foro col-2 img-fluid" alt="imagen"></img> :
+        CrearConsultaPendiente("tipo") === 'Gif' ? <img src={CrearConsultaPendiente("archivo")} className="d-block mb-4 gif-foro col-2 img-fluid" alt="imagen"></img> :
+        CrearConsultaPendiente("tipo") === 'Audio' ? <audio controls src={CrearConsultaPendiente("archivo")} className="d-block mb-4"></audio> :
+        CrearConsultaPendiente("tipo") === 'Video' ? <video width="750" height="500" controls src={CrearConsultaPendiente("archivo")} className="d-block mb-4"></video> 
+        :<p className="d-block mb-3"></p>}
+      </div>
+
+      <div className="mt-2">
+      <p>Answer: {CrearConsultaResuelta("mensaje")}</p>
+        {CrearConsultaResuelta("tipo") === 'Imagen' ? <img src={CrearConsultaResuelta("archivo")} className="img-thumbnail mb-3 img-foro col-2 img-fluid" alt="imagen"></img> :
+        CrearConsultaResuelta("tipo") === 'Gif' ? <img src={CrearConsultaResuelta("archivo")} className="d-block mb-3 gif-foro col-2 img-fluid" alt="imagen"></img> :
+        CrearConsultaResuelta("tipo") === 'Audio' ? <audio controls src={CrearConsultaResuelta("archivo")} className="d-block mb-3"></audio> : 
+        CrearConsultaResuelta("tipo") === 'Video'? <video width="750" height="500" controls src={CrearConsultaResuelta("archivo")}></video>
+        :<p className="d-block mb-3"></p>}
+      </div>
+
+      <button className="mt-1 mb-3 btn btn-primary" onClick={handleClick}>{EstadoHilo}</button>
+      {isShown && <Preguntar />}
+
+>>>>>>> 2f7bf219d57c657ccd9fe972ef3b7f5c63102993
     </div>
   )
 }
