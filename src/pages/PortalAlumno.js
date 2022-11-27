@@ -32,11 +32,7 @@ export default function Portal() {
    solouna++
  };*/
 
-  const cursoOb = new CursoOb();
-
   const [cursos, setCursos] = useState([]);  //array de datos
-
-
 
   useEffect(() => {
 
@@ -95,7 +91,6 @@ export default function Portal() {
 
           <div className="cursosEstudiante">
             {cursos.map((curso) => (
-            
               <Curso key={curso.ID_CURSO} id={curso.ID_CURSO} nombre={curso.NOMBRE} ptj={`${curso.PORCENTAJE}%`} />
             ))}
           </div>

@@ -1,9 +1,10 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react';
 import Curso from "../components/Curso";
 import Foro from "../components/Foro";
+import Comentarios from './comentarios';
 import Zoom from "../components/Zoom";
 import Navbar from '../components/Navbar';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FiSearch } from 'react-icons/fi'
 import { NavLink } from 'react-router-dom';
 import Cookies from "universal-cookie";
@@ -35,7 +36,22 @@ export default function Portal() {
   podemos ver que se usan las cookies para obtener el tipo de usuario y según eso pintar si es Student o Professor.
   sin embargo, no se creará un único modelo, sino que se tendrán dos tipos de perfiles
   */
+ const [alumno,setAlumno] = useState([]);
+ 
+  useEffect(() => {
 
+  Axios.get("http://localhost:4000/buscaAlumnos").then(function (response) {
+    if (response.statusText === "OK") {
+      // Enviar cursos
+      setAlumno(response.data.rows);
+      console.log(response.data.rows)
+    }
+  })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }, []
+  )
 
   return (
     <div className="d-flex justify-content-center">
@@ -55,7 +71,7 @@ export default function Portal() {
           </div>
           <Zoom />
         </div>
-        <div className='d-flex mt-6 justify-content-between'>
+        <div className='d-flex mt-2 justify-content-between'>
           <div className='container'>
             <h1>Create Evaluation</h1>
             <br></br>
@@ -63,6 +79,18 @@ export default function Portal() {
               <button className='btn btn-primary'>Creation of forms</button>
             </Link>
           </div>
+        </div>
+        <div className='d-flex mt-2 justify-content-between'>
+        <h1 className='my-5 mx-5'>Comment your students progress</h1>  
+        </div>
+        <div className='d-flex mx-5'>
+          
+        
+          <Comentarios nombre = {"Luis"}></Comentarios>
+          {alumno.map((alumno) => (
+            <Comentarios nombre = {alumno.PRIMER_NOM}/>
+          ))}
+
         </div>
       </section>
     </div>
