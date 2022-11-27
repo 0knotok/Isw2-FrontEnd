@@ -37,6 +37,29 @@ function ConsultaForo() {
   const handleClick = event => {
     setIsShown(current => !current);
   };
+  //ver tamaño archivos
+
+  const [selectedFile, setSelectedFile] = useState();
+  const [errorMsg, setErrorMsg] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const validateSelectedFile = () => {
+    const MAX_FILE_SIZE = 5120 // 5MB
+
+    if (!selectedFile) {
+      console.log("NO se esta enviando archivos");
+    }
+
+    const fileSizeKiloBytes = selectedFile.size / 1024
+
+    if(fileSizeKiloBytes > MAX_FILE_SIZE){
+      window.alert("Archivo demasiado pesado");
+      window.location.reload();
+    }
+    
+    console.log("archivo de tamaño adecuado");
+  }
+
 
   // Subir archivos
   const [formFile, setFile] = useState();
@@ -48,6 +71,10 @@ function ConsultaForo() {
     let files = event.target.files;
     let nameFile = files[0].name;
     setName(nameFile);
+    //llamado de tamño archivos
+    if(event.target.files.length > 0){
+      setSelectedFile(event.target.files[0]);
+    }
 
     //Obtener tipo de archivo
     let extImg = /(.jpg|.png|.jpeg)$/i;
@@ -90,7 +117,7 @@ function ConsultaForo() {
                   <input className="form-control" id="txtresp" type="text"></input><br></br>
                 </div>
                 <div className="col-1">
-                  <div className="col-1 "><button className="mb-3 btn btn-primary" type="submit"><IoMdSend /> </button></div>
+                  <div className="col-1 "><button className="mb-3 btn btn-primary" type="submit" onClick={validateSelectedFile}><IoMdSend /> </button></div>
                 </div>
               </div>
               <input className="mb-4" type="file" name="uploadFile" onChange={(e) => handleChangeInput(e)} />
@@ -137,6 +164,8 @@ function ConsultaForo() {
   const consulta = hilo.crearEstado('Pendiente');
 
   function CrearConsultaPendiente(tipo) {
+
+
     if (pregunta.texto !== "") {
       consulta.setmensaje = pregunta.texto;
       consulta.settipo = pregunta.tipo;
@@ -163,6 +192,8 @@ function ConsultaForo() {
   const consulta2 = hilo2.crearEstado('Resuelta');
 
   function CrearConsultaResuelta(tipo) {
+    
+
     if (respuesta.texto !== "") {
       consulta2.setmensaje = m;
       consulta2.setrespuesta = respuesta.texto;
