@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import FactoryHilo from "./ObjetosForo/FactoryHilo";
 import { IoMdSend } from "react-icons/io";
 import { AiOutlineConsoleSql, AiOutlinePaperClip } from "react-icons/ai";
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+
 
 function ConsultaForo() {
 
