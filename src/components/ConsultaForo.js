@@ -235,7 +235,6 @@ function ConsultaForo() {
     <div className="container border mb-3">
 
       <div className="mt-3">
-<<<<<<< HEAD
         <p>Question: {CrearConsultaPendiente("mensaje")} <button className="mb-3 btn btn-primary" onClick={handleClick}>Make a question</button></p>
         {CrearConsultaPendiente("tipo") === 'Imagen' ? <img src={CrearConsultaPendiente("archivo")} className="img-thumbnail mb-2 img-foro" alt="imagen"></img> :
         CrearConsultaPendiente("tipo") === 'Gif' ? <img src={CrearConsultaPendiente("archivo")} className="d-block mb-3 gif-foro" alt="imagen"></img> :
@@ -253,28 +252,6 @@ function ConsultaForo() {
       </div>
       
       {isShown && <Preguntar /> || <Contestar />}
-=======
-        <p>Question: {CrearConsultaPendiente("mensaje")}</p>
-        {CrearConsultaPendiente("tipo") === 'Imagen' ? <img src={CrearConsultaPendiente("archivo")} className="img-thumbnail mb-4 img-foro col-2 img-fluid" alt="imagen"></img> :
-        CrearConsultaPendiente("tipo") === 'Gif' ? <img src={CrearConsultaPendiente("archivo")} className="d-block mb-4 gif-foro col-2 img-fluid" alt="imagen"></img> :
-        CrearConsultaPendiente("tipo") === 'Audio' ? <audio controls src={CrearConsultaPendiente("archivo")} className="d-block mb-4"></audio> :
-        CrearConsultaPendiente("tipo") === 'Video' ? <video width="750" height="500" controls src={CrearConsultaPendiente("archivo")} className="d-block mb-4"></video> 
-        :<p className="d-block mb-3"></p>}
-      </div>
-
-      <div className="mt-2">
-      <p>Answer: {CrearConsultaResuelta("mensaje")}</p>
-        {CrearConsultaResuelta("tipo") === 'Imagen' ? <img src={CrearConsultaResuelta("archivo")} className="img-thumbnail mb-3 img-foro col-2 img-fluid" alt="imagen"></img> :
-        CrearConsultaResuelta("tipo") === 'Gif' ? <img src={CrearConsultaResuelta("archivo")} className="d-block mb-3 gif-foro col-2 img-fluid" alt="imagen"></img> :
-        CrearConsultaResuelta("tipo") === 'Audio' ? <audio controls src={CrearConsultaResuelta("archivo")} className="d-block mb-3"></audio> : 
-        CrearConsultaResuelta("tipo") === 'Video'? <video width="750" height="500" controls src={CrearConsultaResuelta("archivo")}></video>
-        :<p className="d-block mb-3"></p>}
-      </div>
-
-      <button className="mt-1 mb-3 btn btn-primary" onClick={handleClick}>{EstadoHilo}</button>
-      {isShown && <Preguntar />}
-
->>>>>>> 2f7bf219d57c657ccd9fe972ef3b7f5c63102993
     </div>
   )
 }
