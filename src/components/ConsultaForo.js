@@ -49,11 +49,7 @@ function ConsultaForo() {
     const MAX_FILE_SIZE = 5120 // 5MB
 
     if (!selectedFile) {
-<<<<<<< HEAD
       console.log("Not sending any file");
-=======
-      console.log("No se esta enviando archivos");
->>>>>>> 2f7bf219d57c657ccd9fe972ef3b7f5c63102993
     }
 
     const fileSizeKiloBytes = selectedFile.size / 1024
@@ -63,11 +59,7 @@ function ConsultaForo() {
       window.location.reload();
     }
     
-<<<<<<< HEAD
     console.log("File well size");
-=======
-    console.log("Archivo de tamaño adecuado");
->>>>>>> 2f7bf219d57c657ccd9fe972ef3b7f5c63102993
   }
 
   // Subir archivos
