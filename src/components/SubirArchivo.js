@@ -40,8 +40,7 @@ export default function SubirArchivo(){
       setFile(pdf);
     }
   }
-
-    
+  
   function submitFile(e){
       let reader = formFile;
       let nombre = formName;

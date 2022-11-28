@@ -18,7 +18,7 @@ export default function Comentarios (props){
                 <div className="text-center my-4">{comenDisplay}</div>
                 <div className="row">
                     <div className="col-9">
-                        <input className="form-control" type="text" placeholder="Ingrese comentario" onChange={e => setcomentario(e.target.value)} value={comentario}></input>
+                        <input className="form-control" type="text" placeholder="Send your comment" onChange={e => setcomentario(e.target.value)} value={comentario}></input>
                     </div>
                     <div className="col-1">
                         <button className="btn btn-primary ml-2 align-items-center" onClick={e =>handleChangeComentario(e)}> Enviar </button>

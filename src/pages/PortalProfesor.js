@@ -83,9 +83,7 @@ export default function Portal() {
         <div className='d-flex mt-2 justify-content-between'>
         <h1 className='my-5 mx-5'>Comment your students progress</h1>  
         </div>
-        <div className='d-flex mx-5'>
-          
-        
+        <div className='d-flex mx-5'>        
           <Comentarios nombre = {"Luis"}></Comentarios>
           {alumno.map((alumno) => (
             <Comentarios nombre = {alumno.PRIMER_NOM}/>

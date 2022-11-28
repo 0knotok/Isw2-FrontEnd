@@ -126,9 +126,10 @@ function ConsultaForo() {
               <p className="blockquote-footer d-block mt-1 mb-3">Vista Previa:</p>
               {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro col-2 img-fluid" alt="imagen"></img> :
                 formFile && formType === 'Gif' ? <img src={formFile} className="d-block mb-3 gif-foro col-2 img-fluid" alt="imagen"></img> :
-                formFile && formType === 'Audio' ? <audio controls src={formFile} className="d-block mb-3"></audio>
-                  :<p className="d-block mt-1 mb-3"><small>Seleccione un Archivo</small></p>}
-              <p className="blockquote-footer d-block mt-1 mb-3">Formatos soportados: jpg, png, jpeg, mp3, wav, ogg, gif, apng, mp4, mov, wmv</p>
+                formFile && formType === 'Audio' ? <audio controls src={formFile} className="d-block mb-3"></audio>:
+                formFile && formType === 'Video' ? <video controls src={formFile} className="d-block mb-3"></video>
+                  :<p className="d-block mt-1 mb-3"><small>Choose a File</small></p>}
+              <p className="blockquote-footer d-block mt-1 mb-3">Supported formats: jpg, png, jpeg, mp3, wav, ogg, gif, apng, mp4, mov, wmv</p>
             </form>
           </div>
         </div>
@@ -154,9 +155,10 @@ function ConsultaForo() {
               <p className="blockquote-footer d-block mt-1 mb-3">Vista Previa:</p>
               {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-3 img-foro col-2 img-fluid" alt="imagen"></img> :
                 formFile && formType === 'Gif' ? <img src={formFile} className="d-block mb-3 gif-foro col-2 img-fluid" alt="imagen"></img> :
-                formFile && formType === 'Audio' ? <audio controls src={formFile} className="d-block mb-3"></audio>
-                  :<p className="d-block mt-1 mb-3"><small>Seleccione un Archivo</small></p>}
-              <p className="blockquote-footer d-block mt-1 mb-3">Formatos soportados: jpg, png, jpeg, mp3, wav, ogg, gif, apng, mp4, mov, wmv</p>
+                formFile && formType === 'Audio' ? <audio controls src={formFile} className="d-block mb-3"></audio>:
+                formFile && formType === 'Video' ? <video controls src={formFile} className="d-block mb-3"></video>
+                  :<p className="d-block mt-1 mb-3"><small>Choose a File</small></p>}
+              <p className="blockquote-footer d-block mt-1 mb-3">Supported formats: jpg, png, jpeg, mp3, wav, ogg, gif, apng, mp4, mov, wmv</p>
             </form>
           </div>
         </div>
