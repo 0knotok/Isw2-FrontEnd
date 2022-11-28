@@ -49,17 +49,17 @@ function ConsultaForo() {
     const MAX_FILE_SIZE = 5120 // 5MB
 
     if (!selectedFile) {
-      console.log("Not sending any file");
+      console.log("No se esta enviando archivos");
     }
 
     const fileSizeKiloBytes = selectedFile.size / 1024
 
     if(fileSizeKiloBytes > MAX_FILE_SIZE){
-      window.alert("The file is too heavy");
+      window.alert("Archivo demasiado pesado");
       window.location.reload();
     }
     
-    console.log("File well size");
+    console.log("Archivo de tamaño adecuado");
   }
 
   // Subir archivos
@@ -103,8 +103,8 @@ function ConsultaForo() {
       setFile(pdf);
     }
   }
-  
-  function Contestar() {
+
+  function Preguntar() {
 
     if (pregunta.texto !== "") {
       setEstadoHilo("Post an Answer");
@@ -123,25 +123,20 @@ function ConsultaForo() {
                 </div>
               </div>
               <input className="mb-4" type="file" name="uploadFile" onChange={(e) => handleChangeInput(e)} />
-              {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro" alt="imagen"></img> :
-                 formFile && formType === 'Gif' ? <img src={formFile} className="d-block mb-3 gif-foro" alt="imagen"></img> :
-                formFile && formType === 'Audio' ? <audio controls src={formFile} className="d-block mb-3"></audio> :
-                formFile && formType === 'Video' ? <video controls src={formFile} className="d-block mb-3"></video>
-                  : <p className="d-block mb-3">Choose a File</p>}
+              <p className="blockquote-footer d-block mt-1 mb-3">Vista Previa:</p>
+              {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro col-2 img-fluid" alt="imagen"></img> :
+                formFile && formType === 'Gif' ? <img src={formFile} className="d-block mb-3 gif-foro col-2 img-fluid" alt="imagen"></img> :
+                formFile && formType === 'Audio' ? <audio controls src={formFile} className="d-block mb-3"></audio>
+                  :<p className="d-block mt-1 mb-3"><small>Seleccione un Archivo</small></p>}
+              <p className="blockquote-footer d-block mt-1 mb-3">Formatos soportados: jpg, png, jpeg, mp3, wav, ogg, gif, apng, mp4, mov, wmv</p>
             </form>
           </div>
         </div>
       );
     }
-    else{
-      <div>
-        There's no question made
-      </div>
-    }
-  }
-  function Preguntar() {
-    if (pregunta.texto == "") {
-    //Realizar una pregunta
+
+    else {
+      //Realizar una pregunta
       return (
         <div>
 
@@ -155,22 +150,19 @@ function ConsultaForo() {
                   <button className="mb-3 btn btn-primary" type="submit"><IoMdSend /></button>
                 </div>
               </div>
-              <input className="mb-4" type="file" name="uploadFile" onChange={(e) => handleChangeInput(e)} />
-              {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-2 img-foro" alt="imagen"></img> :
-                 formFile && formType === 'Gif' ? <img src={formFile} className="d-block mb-3 gif-foro" alt="imagen"></img> :
-                formFile && formType === 'Audio' ? <audio controls src={formFile} className="d-block mb-3"></audio> :
-                formFile && formType === 'Video' ? <video controls src={formFile} className="d-block mb-3"></video>
-                  : <p className="d-block mb-3">Choose a file</p>}
+              <input className="mb-4 custom-file-input" type="file" name="uploadFile" onChange={(e) => handleChangeInput(e)} />
+              <p className="blockquote-footer d-block mt-1 mb-3">Vista Previa:</p>
+              {formFile && formType === 'Imagen' ? <img src={formFile} className="img-thumbnail mb-3 img-foro col-2 img-fluid" alt="imagen"></img> :
+                formFile && formType === 'Gif' ? <img src={formFile} className="d-block mb-3 gif-foro col-2 img-fluid" alt="imagen"></img> :
+                formFile && formType === 'Audio' ? <audio controls src={formFile} className="d-block mb-3"></audio>
+                  :<p className="d-block mt-1 mb-3"><small>Seleccione un Archivo</small></p>}
+              <p className="blockquote-footer d-block mt-1 mb-3">Formatos soportados: jpg, png, jpeg, mp3, wav, ogg, gif, apng, mp4, mov, wmv</p>
             </form>
           </div>
         </div>
       );
     }
-    else{
-      <div>
-        There's a question made
-      </div>
-    }
+
   }
 
   const Factory = new FactoryHilo()
@@ -230,28 +222,30 @@ function ConsultaForo() {
     }
   }
 
-
   return (
     <div className="container border mb-3">
 
       <div className="mt-3">
-        <p>Question: {CrearConsultaPendiente("mensaje")} <button className="mb-3 btn btn-primary" onClick={handleClick}>Make a question</button></p>
-        {CrearConsultaPendiente("tipo") === 'Imagen' ? <img src={CrearConsultaPendiente("archivo")} className="img-thumbnail mb-2 img-foro" alt="imagen"></img> :
-        CrearConsultaPendiente("tipo") === 'Gif' ? <img src={CrearConsultaPendiente("archivo")} className="d-block mb-3 gif-foro" alt="imagen"></img> :
-        CrearConsultaPendiente("tipo") === 'Audio' ? <audio controls src={CrearConsultaPendiente("archivo")} className="d-block mb-3"></audio> :
-        CrearConsultaPendiente("tipo") === 'Video' ? <video width="750" height="500" controls src={CrearConsultaPendiente("archivo")} className="d-block mb-3"></video> 
-                  : <p className="d-block mb-3"></p>}
-      </div>
-      <div className="mt-2">
-      <p>Answer: {CrearConsultaResuelta("mensaje")} <button className="mb-3 btn btn-primary" onClick={handleClick}>Answer a question</button></p>
-        {CrearConsultaResuelta("tipo") === 'Imagen' ? <img src={CrearConsultaResuelta("archivo")} className="img-thumbnail mb-2 img-foro" alt="imagen"></img> :
-        CrearConsultaResuelta("tipo") === 'Gif' ? <img src={CrearConsultaResuelta("archivo")} className="d-block mb-3 gif-foro" alt="imagen"></img> :
-        CrearConsultaResuelta("tipo") === 'Audio' ? <audio controls src={CrearConsultaResuelta("archivo")} className="d-block mb-3"></audio>: 
-        CrearConsultaResuelta("tipo") === 'Video'? <video width="750" height="500" controls><source src={CrearConsultaResuelta("archivo")}/></video>
+        <p>Question: {CrearConsultaPendiente("mensaje")}</p>
+        {CrearConsultaPendiente("tipo") === 'Imagen' ? <img src={CrearConsultaPendiente("archivo")} className="img-thumbnail mb-4 img-foro col-2 img-fluid" alt="imagen"></img> :
+        CrearConsultaPendiente("tipo") === 'Gif' ? <img src={CrearConsultaPendiente("archivo")} className="d-block mb-4 gif-foro col-2 img-fluid" alt="imagen"></img> :
+        CrearConsultaPendiente("tipo") === 'Audio' ? <audio controls src={CrearConsultaPendiente("archivo")} className="d-block mb-4"></audio> :
+        CrearConsultaPendiente("tipo") === 'Video' ? <video width="750" height="500" controls src={CrearConsultaPendiente("archivo")} className="d-block mb-4"></video> 
         :<p className="d-block mb-3"></p>}
       </div>
-      
-      {isShown && <Preguntar /> || <Contestar />}
+
+      <div className="mt-2">
+      <p>Answer: {CrearConsultaResuelta("mensaje")}</p>
+        {CrearConsultaResuelta("tipo") === 'Imagen' ? <img src={CrearConsultaResuelta("archivo")} className="img-thumbnail mb-3 img-foro col-2 img-fluid" alt="imagen"></img> :
+        CrearConsultaResuelta("tipo") === 'Gif' ? <img src={CrearConsultaResuelta("archivo")} className="d-block mb-3 gif-foro col-2 img-fluid" alt="imagen"></img> :
+        CrearConsultaResuelta("tipo") === 'Audio' ? <audio controls src={CrearConsultaResuelta("archivo")} className="d-block mb-3"></audio> : 
+        CrearConsultaResuelta("tipo") === 'Video'? <video width="750" height="500" controls src={CrearConsultaResuelta("archivo")}></video>
+        :<p className="d-block mb-3"></p>}
+      </div>
+
+      <button className="mt-1 mb-3 btn btn-primary" onClick={handleClick}>{EstadoHilo}</button>
+      {isShown && <Preguntar />}
+
     </div>
   )
 }
